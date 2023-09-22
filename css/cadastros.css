@@ -1,0 +1,76 @@
+#container-principal {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+#title-pagina {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #7a7a7a;
+}
+
+#select-status select{
+    width: 200px;
+    border-radius: 3px;
+}
+
+#select-status2 select{
+    width: 200px;
+    border-radius: 3px;
+}
+
+#select-status3 select{
+    width: 200px;
+    border-radius: 3px;
+}
+
+#div-cadastrar, #mostrar-cadastro {
+    margin-right: 1em;
+    padding: 1em; 
+}
+
+#div-cadastrar h5, #mostrar-cadastro h5{
+    border-bottom: 1px solid #7a7a7a;
+}
+
+#div-cadastrar,
+#mostrar-cadastro {
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+#buttons-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #7a7a7a;
+}
+
+#buttons-cadastro button {
+    width: 150px;
+}
+
+#btn-cadastrar {
+    margin-right: 1em;
+}
+
+#tabela-cadastros i{
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+
+#exibir-cadastros { /*LIMITA O TAMANHO DA DIV QUE ESTÁ A TABELA, CRIANDO BARRA DE ROLAGEM VERTICAL*/
+    overflow: auto;
+    height: 23em;
+}
+
+form i{
+    cursor: pointer;
+}
+
+

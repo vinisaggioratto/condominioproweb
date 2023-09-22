@@ -1,0 +1,20 @@
+
+
+#container-versao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    text-align: center;
+}
+
+#descricao-versao {
+    margin-top: 2em;
+}
+
+#title-pagina-versao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #7a7a7a;
+}

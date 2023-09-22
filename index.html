@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Condomínio Pro - Gestão de Condomínios</title>
+
+    <link rel="shortcut icon" href="img/logo40x40.png" type="image/x-icon">
+
+    <!--Google fonts - lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--CSS only bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!--CSS local-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/geral.css">
+</head>
+
+<body>
+
+    <!--NAVBAR CABEÇALHO-->
+    <div class="container-fluid fixed-top bg-secondary-color" id="container-navbar">
+
+        <div class="col-12 col-md-1" id="img-logo">
+            <!--ÍCONE MARCA CHAPÉU-->
+            <a href="index.html" class="primary-color">
+                <img src="img/logo-simples-120.png" alt="Condomínio Pro - Gestão de Condomínios">
+            </a>
+        </div>
+        <div class="container col-12 col-md-9" id="title-navbar">
+            <span class="title-color"><h3>Condomínio Pro - Gestão de Condomínios</h3></span>
+        </div>
+        <div class="container col-12 col-md-2" id="login"> <!-- -->
+            <button type="button" class="btn btn-light" id="btn-login" onclick="mostrarLogin()">Área do cliente</button>
+        </div>
+    </div>
+
+
+    <!--CONTAINER LOGIN-->
+    <div class="container col-12" id="container-login">
+        <div id="container-dados">
+            <div class="form" id="container-formulario">
+                <form action="">
+                    <div id="titulo-form-login">
+                        <h2>LOGIN</h2>
+                    </div>
+                    <div>
+                        <label for="">Usuário: </label>
+                        <input type="text" name="usuario" id="usuario" required>
+                    </div>
+                    <div>
+                        <label for="">Senha: </label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+                    <div id="btn-entrar">
+                        <button class="btn btn-dark" type="button" onclick="validarLogin()">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL DE AVISO LOGIN INVÁLIDO-->
+    <div class="modal" tabindex="-1" id="modal-login">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title title-color">Login inválido</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Verifique o usuário e senha informados.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary bg-secondary-color" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--RODAPÉ-->
+    <footer class="footer fixed-bottom">
+        <div class="col-12 col-md-12 secondary-color" id="text-footer">
+            Desenvolvido por Vinicius G. Saggioratto &copy; 2023
+        </div>
+    </footer>
+
+
+        <script src="js/index.js"></script>
+        <script src="telaprincipal.html"></script>
+</body>
+
+</html>

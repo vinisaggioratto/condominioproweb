@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F5F5F5;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-primary-color {
+    background-color: #F5F5F5;
+}
+
+.bg-secondary-color {
+    background-color: #09333F;
+}
+
+.bg-third-color {
+    background-color: #00C2CB;
+}
+
+.primary-color {
+    color: #050505;
+}
+
+.secondary-color {
+    color: #7a7a7a;
+}
+
+.title-color {
+    color: #00C2CB;
+}
+
