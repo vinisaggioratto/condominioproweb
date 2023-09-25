@@ -6,7 +6,7 @@ function mostrarLogin(){
     $('#container-login').show();
 }
 function validarLogin(){
-    const usuarioTeste = 'Vinicius';
+    const usuarioTeste = 'teste';
     const senhaTeste = '123'; 
 
     let usuario = document.getElementById('usuario').value;
