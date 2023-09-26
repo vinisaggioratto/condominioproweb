@@ -35,6 +35,7 @@
 
     <!--JS local-->
     <script src="js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 </head>
 
 <body onload="mostrarUsuario()">
@@ -202,10 +203,10 @@
                     <h5>Cadastrar Apartamento</h5>
                 </div>
                 <div class="form">
-                    <form method="POST" action="">
+                    <form method="POST" action="" id="formCadastro">
                         <div>
                             <label for="">Número: </label>
-                            <input type="number" name="numero" id="numero" required>
+                            <input type="number" name="numero" id="numero" pattern="[0-9]+$" required>
                         </div>
                         <div>
                             <label for="">Andar: </label>
@@ -226,7 +227,7 @@
                             <button type="button" class="btn btn-dark" value="cadastrar" id="btn-cadastrar"
                                 onclick="adicionarApartamento()">Cadastrar</button>
                             <button type="button" class="btn btn-dark" id="btn-limpar"
-                                onclick="limparCampos()">Limpar</button>
+                                onclick="limparCampos()">Limpar</button>  
                         </div>
                     </form>
                 </div>
@@ -262,7 +263,6 @@
 
     <script src="js/index.js"></script>
     <script src="js/apartamento.js"></script>
-
 
 </body>
 

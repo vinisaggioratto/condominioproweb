@@ -6,15 +6,22 @@ function adicionarApartamento() {
     let statusApto = document.getElementById("select-cadastro");
     let statusSelecionado = statusApto.value;
 
-    $('#body-tabela').append("<tr>" +
-        "<td>" + "Id" + "</td>" +
-        "<td>" + numero + "</td>" +
-        "<td>" + andar + "</td>" +
-        "<td>" + bloco + "</td>" +
-        "<td>" + statusSelecionado + "</td>" +
-        "<td>" + '<i class="bi bi-pencil-square"></i>' + '<i class="bi bi-trash3-fill"></i>' + "</td>" +
-        "</tr>");
-    /*document.getElementById("listaDeCompras").innerHTML = conteudoAntigo + conteudoNovo;*/
+    if (numero != "" && andar != "" && bloco != "") {
+
+
+        $('#body-tabela').append("<tr>" +
+            "<td>" + "Id" + "</td>" +
+            "<td>" + numero + "</td>" +
+            "<td>" + andar + "</td>" +
+            "<td>" + bloco + "</td>" +
+            "<td>" + statusSelecionado + "</td>" +
+            "<td>" + '<i class="bi bi-pencil-square"></i>' + '<i class="bi bi-trash3-fill"></i>' + "</td>" +
+            "</tr>");
+
+        /*document.getElementById("listaDeCompras").innerHTML = conteudoAntigo + conteudoNovo;*/
+    } else {
+        alert("Preencha todos os campos.")
+    }
 }
 
 function limparCampos() {
@@ -22,3 +29,4 @@ function limparCampos() {
     document.getElementById("andar").value = "";;
     document.getElementById("bloco").value = "";;
 }
+
