@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="css/telaprincipal.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/cadastros.css">
-    <link rel="stylesheet" href="css/ajuda.css">
 
     <!--JS local-->
     <script src="js/menu.js"></script>
@@ -192,20 +191,82 @@
     </nav>
 
 
-    <div class="container-fluid " id="container-versao">
+    <div class="container-fluid " id="container-principal">
         <div class="row">
-            <div class="col-12" id="title-pagina-versao">
-                <h3>Versão do Sistema</h3>
-            </div>
-            <div class="col-12" id="descricao-versao">
-                <p>Versão: 0.1</p>
-                <p>Banco de Dados: MySQL</p>
-                <p>Banco de Dados Status: offline</p>
+            <div class="col-12 col-md-5" id="title-pagina">
+                <h3>Veículos</h3>
             </div>
         </div>
+        <div class="row g-2" id="row-2">
+            <div class="col-12 col-md-3" id="div-cadastrar">
+                <div class="col-12">
+                    <h5>Cadastrar Veículos</h5>
+                </div>
+                <div class="form">
+                    <form method="POST" action="">
+                        <div>
+                            <label for="">Placa: </label>
+                            <input type="text" name="placa" id="placa" required>
+                        </div>
+                        <div>
+                            <label for="">Marca: </label>
+                            <input type="text" name="marca" id="marca" required>
+                        </div>
+                        <div>
+                            <label for="">Cor: </label>
+                            <input type="text" name="cor" id="cor" required>
+                        </div>
+                        <div id="select-status">
+                            <label for="">Ativo: </label>
+                            <select name="select-cadastro" id="select-cadastro">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Modelo: </label>
+                            <input type="text" name="modelo" id="modelo" required>
+                        </div>
+                        <div id="select-status2">
+                            <label for="">Condômino: </label>
+                            <select name="select-cadastro2" id="select-cadastro2">
+                                <option value="1">Vinicius G. Saggioratto</option>
+                                <option value="2">Vitor B. Saggioratto</option>
+                            </select>
+                        </div>
+                        <div id="buttons-cadastro">
+                            <button type="button" class="btn btn-dark" value="cadastrar" id="btn-cadastrar"
+                                onclick="adicionarApartamento()">Cadastrar</button>
+                            <button type="button" class="btn btn-dark" id="btn-limpar"
+                                onclick="limparCampos()">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-8" id="mostrar-cadastro">
+                <div class="col-12">
+                    <h5>Veículos cadastrados</h5>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12" id="exibir-cadastros">
+                        <div class="table-responsive" id="div-tabela">
+                            <table class="table table-striped table-hover" id="tabela-cadastros">
 
-        <script src="js/index.js"></script>
-        <script src="js/apartamento.js"></script>
+                                <tbody id="bodytabela">
+                                    <!--Aqui serão mostradas as reservas-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/veiculo.js"></script>
+
 
 </body>
 

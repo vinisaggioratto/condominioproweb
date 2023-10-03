@@ -60,13 +60,15 @@
 }
 
 #tabela-cadastros i{
-    padding-left: 10px;
+    margin-right: 10px;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 #exibir-cadastros { /*LIMITA O TAMANHO DA DIV QUE ESTÁ A TABELA, CRIANDO BARRA DE ROLAGEM VERTICAL*/
     overflow: auto;
     height: 23em;
+
 }
 
 form i{
