@@ -1,30 +1,26 @@
-const url = "http://localhost:8080/apartamentos";
+const url = "http://localhost:8080/login";
 
 
-function show(apartamentos) {
+function show(usuarios) {
     let tab =
         `
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Número</th>
-            <th scope="col">Andar</th>
-            <th scope="col">Bloco</th>
-            <th scope="col">Status</th>
+            <th scope="col">Usuário</th>
+            <th scope="col">Condômino</th>
             <th scope="col">Ações</th>
         </tr>
     </thead>
     `;
 
-    for (let apartamento of apartamentos) {
+    for (let usuario of usuarios) {
         tab +=
             `
         <tr>
-            <td scope="row">${apartamento.apartamento_id}</td>
-            <td>${apartamento.numero}</td>
-            <td>${apartamento.andar}</td>
-            <td>${apartamento.bloco}</td>
-            <td>${apartamento.status}</td>
+            <td scope="row">${usuario.login_id}</td>
+            <td>${usuario.usuario}</td>
+            <td>${usuario.condomino}</td>
             <td><i class="bi bi-pencil-square"></i><i class="bi bi-trash3-fill"></i></td>
         </tr>
         `;
