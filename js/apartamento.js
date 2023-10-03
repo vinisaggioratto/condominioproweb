@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/apartamentos";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(apartamentos) {
     let tab =
         `
@@ -45,6 +45,45 @@ async function getAPI(url) {
 }
 
 getAPI(url);
+
+
+//ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO
+
+document.getElementById("btn-cadastrar").addEventListener("click", async () => {
+    const numero = document.getElementById("numero").value;
+    const andar = document.getElementById("andar").value;
+    const bloco = document.getElementById("bloco").value;
+    const status = document.getElementById("select-cadastro").value;
+
+    const data = {
+        numero,
+        andar,
+        bloco,
+        status
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            alert("Dados cadastrados com sucesso!");
+            getAPI(url);
+        } else {
+            alert("Erro ao cadastrar os dados.");
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    }
+});
+
+
+//LIMPAR OS CAMPOS
 
 
 function limparCampos() {
