@@ -1,55 +1,24 @@
-const url = "http://localhost:8080/apartamentos";
 
+function adicionarApartamento() {
+    let numero = document.getElementById("numero").value;
+    let andar = document.getElementById("andar").value;
+    let bloco = document.getElementById("bloco").value;
+    let statusApto = document.getElementById("select-cadastro");
+    let statusSelecionado = statusApto.value;
 
-function show(apartamentos) {
-    let tab =
-        `
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Número</th>
-            <th scope="col">Andar</th>
-            <th scope="col">Bloco</th>
-            <th scope="col">Status</th>
-            <th scope="col">Ações</th>
-        </tr>
-    </thead>
-    `;
-
-    for (let apartamento of apartamentos) {
-        tab +=
-            `
-        <tr>
-            <td scope="row">${apartamento.apartamento_id}</td>
-            <td>${apartamento.numero}</td>
-            <td>${apartamento.andar}</td>
-            <td>${apartamento.bloco}</td>
-            <td>${apartamento.status}</td>
-            <td><i class="bi bi-pencil-square"></i><i class="bi bi-trash3-fill"></i></td>
-        </tr>
-        `;
-    }
-
-    document.getElementById("bodytabela").innerHTML = tab;
+    $('#body-tabela').append("<tr>" +
+        "<td>" + "Id" + "</td>" +
+        "<td>" + numero + "</td>" +
+        "<td>" + andar + "</td>" +
+        "<td>" + bloco + "</td>" +
+        "<td>" + statusSelecionado + "</td>" +
+        "<td>" + '<i class="bi bi-pencil-square"></i>' + '<i class="bi bi-trash3-fill"></i>' + "</td>" +
+        "</tr>");
+    /*document.getElementById("listaDeCompras").innerHTML = conteudoAntigo + conteudoNovo;*/
 }
-
-async function getAPI(url) {
-    const response = await fetch(url, { method: "GET" });
-
-    var data = await response.json();
-    console.log(data);
-    
-    if (response) {
-        show(data);
-    }
-}
-
-getAPI(url);
-
 
 function limparCampos() {
     document.getElementById("numero").value = "";
     document.getElementById("andar").value = "";;
     document.getElementById("bloco").value = "";;
 }
-

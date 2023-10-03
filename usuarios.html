@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>Condomínio Pro - Gestão de Condomínios</title>
 
-    <link rel="shortcut icon" href="img/logo40x40.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo40x40.png" type="image/x-icon">
 
     <!--Google fonts - lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,14 +27,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
     <!--CSS local-->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/telaprincipal.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/cadastros.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/telaprincipal.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/cadastros.css">
 
     <!--JS local-->
-    <script src="js/menu.js"></script>
+    <script src="/js/menu.js"></script>
 </head>
 
 <body onload="mostrarUsuario()">
@@ -44,8 +44,8 @@
 
         <div class="col-12 col-md-1" id="img-logo">
             <!--ÍCONE MARCA CHAPÉU-->
-            <a href="telaprincipal.html" class="primary-color">
-                <img src="img/logo-simples-120.png" alt="Condomínio Pro - Gestão de Condomínios">
+            <a href="/telaprincipal.html" class="primary-color">
+                <img src="/img/logo-simples-120.png" alt="Condomínio Pro - Gestão de Condomínios">
             </a>
         </div>
         <div class="container col-12 col-md-8" id="title-navbar">
@@ -86,8 +86,7 @@
                                     <li><a class="dropdown-item" href="condomino.html"> Condômino </a></li>
                                     <li><a class="dropdown-item" href="dependentes.html"> Dependentes </a></li>
                                     <li><a class="dropdown-item" href="sindico.html"> Síndico </a></li>
-                                    <li><a class="dropdown-item" href="tipodependente.html"> Tipo de dependente </a>
-                                    </li>
+                                    <li><a class="dropdown-item" href="tipodependente.html"> Tipo de dependente </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -95,32 +94,31 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Financeiro </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="entradafinanceiro.html"> Entradas </a></li>
-                            <li><a class="dropdown-item" href="saidafinanceiro.html"> Saídas </a></li>
+                            <li><a class="dropdown-item" href="/financeiro/entradafinanceiro.html"> Entradas </a></li>
+                            <li><a class="dropdown-item" href="/financeiro/saidafinanceiro.html"> Saídas </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Manutenções </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="manutencao.html"> Manutenções </a></li>
+                            <li><a class="dropdown-item" href="/manutencao/manutencao.html"> Manutenções </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Síndico </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="licencas.html"> Licenças </a></li>
-                            <li><a class="dropdown-item" href="avisos.html"> Avisos </a></li>
-                            <li><a class="dropdown-item" href="ocorrencias.html"> Ocorrências </a></li>
-                            <li><a class="dropdown-item" href="vincularcondominoapto.html"> Vincular
-                                    condômino/apto </a></li>
+                            <li><a class="dropdown-item" href="/sindico/licencas.html"> Licenças </a></li>
+                            <li><a class="dropdown-item" href="/sindico/avisos.html"> Avisos </a></li>
+                            <li><a class="dropdown-item" href="/sindico/ocorrencias.html"> Ocorrências </a></li>
+                            <li><a class="dropdown-item" href="/sindico/vincularcondominoapto.html"> Vincular condômino/apto </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Estoque </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="entradaestoque.html"> Entrada </a></li>
-                            <li><a class="dropdown-item" href="saidaestoque.html"> Saída </a></li>
-                            <li><a class="dropdown-item" href="itens.html"> Itens </a></li>
+                            <li><a class="dropdown-item" href="/estoque/entradaestoque.html"> Entrada </a></li>
+                            <li><a class="dropdown-item" href="/estoque/saidaestoque.html"> Saída </a></li>
+                            <li><a class="dropdown-item" href="/estoque/itens.html"> Itens </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown"> <!--MENU RELATÓRIOS-->
@@ -130,49 +128,49 @@
                                 <ul class="submenu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Endereço &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Cidade</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Estado</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">País</a></li>
+                                            <li><a class="dropdown-item" href="#">Cidade</a></li>
+                                            <li><a class="dropdown-item" href="#">Estado</a></li>
+                                            <li><a class="dropdown-item" href="#">País</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Apartamentos </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Usuários </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Fornecedores </a></li>
+                                    <li><a class="dropdown-item" href="#"> Apartamentos </a></li>
+                                    <li><a class="dropdown-item" href="#"> Usuários </a></li>
+                                    <li><a class="dropdown-item" href="#"> Fornecedores </a></li>
                                     <li><a class="dropdown-item" href="#">Pessoas &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Condôminos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Dependentes</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Síndicos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Tipo de dependentes</a></li>
+                                            <li><a class="dropdown-item" href="#">Condôminos</a></li>
+                                            <li><a class="dropdown-item" href="#">Dependentes</a></li>
+                                            <li><a class="dropdown-item" href="#">Síndicos</a></li>
+                                            <li><a class="dropdown-item" href="#">Tipo de dependentes</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Veículos </a></li>
+                                    <li><a class="dropdown-item" href="#"> Veículos </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Financeiro &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Entradas </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Saídas </a></li>
+                                    <li><a class="dropdown-item" href="#"> Entradas </a></li>
+                                    <li><a class="dropdown-item" href="#"> Saídas </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Manutenções &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Manutenções </a></li>
+                                    <li><a class="dropdown-item" href="#"> Manutenções </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Síndico &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Licenças </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Avisos </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Ocorrências </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Condômino/Apartamento </a></li>
+                                    <li><a class="dropdown-item" href="#"> Licenças </a></li>
+                                    <li><a class="dropdown-item" href="#"> Avisos </a></li>
+                                    <li><a class="dropdown-item" href="#"> Ocorrências </a></li>
+                                    <li><a class="dropdown-item" href="#"> Condômino/Apartamento </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Estoque &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Entrada </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Saída </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Itens </a></li>
+                                    <li><a class="dropdown-item" href="#"> Entrada </a></li>
+                                    <li><a class="dropdown-item" href="#"> Saída </a></li>
+                                    <li><a class="dropdown-item" href="#"> Itens </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -180,8 +178,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Ajuda </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="versaosistema.html"> Versão do sistema </a></li>
-                            <li><a class="dropdown-item" href="documentacao.html"> Documentação </a></li>
+                            <li><a class="dropdown-item" href="/versaosistema.html"> Versão do sistema </a></li>
+                            <li><a class="dropdown-item" href="/documentacao.html"> Documentação </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -235,8 +233,15 @@
                     <div class="col-12 col-12-md-12" id="exibir-cadastros">
                         <div class="table-responsive" id="div-tabela">
                             <table class="table table-striped table-hover" id="tabela-cadastros">
-
-                                <tbody id="bodytabela">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Usuário</th>
+                                        <th scope="col">Condômino</th>
+                                        <th scope="col">Ações</th> <!--Editar, excluir-->
+                                    </tr>
+                                </thead>
+                                <tbody id="body-tabela">
                                     <!--Aqui serão mostradas as reservas-->
                                 </tbody>
                             </table>
@@ -247,8 +252,8 @@
         </div>
 
 
-        <script src="js/index.js"></script>
-        <script src="js/usuarios.js"></script>
+        <script src="/js/index.js"></script>
+        <script src="/js/apartamento.js"></script>
 
 
 </body>
