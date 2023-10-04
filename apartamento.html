@@ -132,20 +132,28 @@
                                 <ul class="submenu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Endereço &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Cidade</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Estado</a></li>
+                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Cidade</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Estado</a>
+                                            </li>
                                             <li><a class="dropdown-item" href="relatorios/relatorio.html">País</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Apartamentos </a></li>
+                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Apartamentos </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="relatorios/relatorio.html"> Usuários </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Fornecedores </a></li>
+                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Fornecedores </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Pessoas &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Condôminos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Dependentes</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Síndicos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Tipo de dependentes</a></li>
+                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Condôminos</a>
+                                            </li>
+                                            <li><a class="dropdown-item"
+                                                    href="relatorios/relatorio.html">Dependentes</a></li>
+                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Síndicos</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Tipo de
+                                                    dependentes</a></li>
                                         </ul>
                                     </li>
                                     <li><a class="dropdown-item" href="relatorios/relatorio.html"> Veículos </a></li>
@@ -167,7 +175,8 @@
                                     <li><a class="dropdown-item" href="relatorios/relatorio.html"> Licenças </a></li>
                                     <li><a class="dropdown-item" href="relatorios/relatorio.html"> Avisos </a></li>
                                     <li><a class="dropdown-item" href="relatorios/relatorio.html"> Ocorrências </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Condômino/Apartamento </a></li>
+                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Condômino/Apartamento
+                                        </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Estoque &raquo; </a>
@@ -206,6 +215,10 @@
                 <div class="form">
                     <form method="POST" action="" id="formCadastro">
                         <div>
+                            <label for="">Id: </label>
+                            <input type="number" name="id" id="id" disabled required>
+                        </div>
+                        <div>
                             <label for="">Número: </label>
                             <input type="number" name="numero" id="numero" pattern="[0-9]+$" required>
                         </div>
@@ -225,10 +238,12 @@
                             </select>
                         </div>
                         <div id="buttons-cadastro">
-                            <button type="button" class="btn btn-dark" value="cadastrar" id="btn-cadastrar"
-                                >Cadastrar</button>
+                            <button type="button" class="btn btn-dark" value="cadastrar"
+                                id="btn-cadastrar">Cadastrar</button>
                             <button type="button" class="btn btn-dark" id="btn-limpar"
-                                onclick="limparCampos()">Limpar</button>  
+                                onclick="limparCampos()">Limpar</button>
+                            <button type="button" class="btn btn-dark" id="btn-excluir" 
+                            >Excluir</button>
                         </div>
                     </form>
                 </div>

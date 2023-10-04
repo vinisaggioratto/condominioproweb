@@ -45,18 +45,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1em;
     margin-top: 2em;
     padding-top: 1em;
     border-top: 1px solid #7a7a7a;
 }
 
 #buttons-cadastro button {
-    width: 150px;
+    width: 100px;
 }
 
-#btn-cadastrar {
-    margin-right: 1em;
+#btn-limpar{
+    margin: 0 1em 0 1em;
 }
 
 #tabela-cadastros i{
