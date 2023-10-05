@@ -1,0 +1,9 @@
+@media (max-width: 316px) {}
+
+@media (max-width: 577px) {}
+
+@media (min-width: 577px) and (max-width: 799.99px) {}
+
+@media (min-width: 800px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px){}

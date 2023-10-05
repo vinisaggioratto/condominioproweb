@@ -92,7 +92,7 @@ form input {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 577px) {
     #container-navbar {
         flex-direction: column;
     }
@@ -131,7 +131,7 @@ form input {
 
 }
 
-@media (min-width: 577px) and (max-width: 699.98px) {
+@media (min-width: 577px) and (max-width: 799.99px) {
     #container-navbar {
         flex-direction: column;
     }
@@ -169,7 +169,7 @@ form input {
     }
 }
 
-@media (min-width: 577px) and (max-width: 1199.98px) {
+@media (min-width: 800px) and (max-width: 1199.98px) {
     #title-navbar {
         text-align: center;
     }

@@ -10,18 +10,10 @@
     border-bottom: 1px solid #7a7a7a;
 }
 
-#select-status select{
-    width: 200px;
-    border-radius: 3px;
-}
-
-#select-status2 select{
-    width: 200px;
-    border-radius: 3px;
-}
-
+#select-status select,
+#select-status2 select, 
 #select-status3 select{
-    width: 200px;
+    width: 12.5em;
     border-radius: 3px;
 }
 
@@ -74,4 +66,208 @@ form i{
     cursor: pointer;
 }
 
+form input {
+    width: 12.5em;
+}
 
+@media (max-width: 343px) {
+    form input {
+        width: 10em;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 10em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 829.99px) {
+    form input {
+        width: 5em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 5em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 830px) and (max-width: 879.99px) {
+    form input {
+        width: 6em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 6em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 880px) and (max-width: 949.99px) {
+    form input {
+        width: 7em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 7em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 950px) and (max-width: 999.99px) {
+    form input {
+        width: 8em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 8em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1049.99px) {
+    form input {
+        width: 8.5em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 8.5em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1050px) and (max-width: 1099.99px) {
+    form input {
+        width: 9em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 9em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1149.99px) {
+    form input {
+        width: 10.4em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 10.4em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1150px) and (max-width: 1199.99px) {
+    form input {
+        width: 10.4em;
+    }
+
+    #buttons-cadastro {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    #btn-limpar{
+        margin: 1em 0 1em 0;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 10.4em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1249.99px) {
+    form input {
+        width: 11em;
+    }
+
+    #select-status select,
+    #select-status2 select, 
+    #select-status3 select{
+        width: 11em;
+        border-radius: 3px;
+    }
+}
