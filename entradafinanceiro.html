@@ -204,6 +204,10 @@
                 </div>
                 <div class="form">
                     <form method="POST" action="">
+                        <div>
+                            <label for="">Id: </label>
+                            <input type="number" name="id" id="id" disabled required>
+                        </div>
                         <div id="select-status">
                             <label for="">Condômino: </label>
                             <select name="select-cadastro" id="select-cadastro">
@@ -231,10 +235,12 @@
                             </select>
                         </div>
                         <div id="buttons-cadastro">
-                            <button type="button" class="btn btn-dark" value="cadastrar" id="btn-cadastrar"
-                                onclick="adicionarApartamento()">Cadastrar</button>
+                            <button type="button" class="btn btn-dark" value="cadastrar"
+                                id="btn-cadastrar">Cadastrar</button>
                             <button type="button" class="btn btn-dark" id="btn-limpar"
                                 onclick="limparCampos()">Limpar</button>
+                            <button type="button" class="btn btn-dark" id="btn-excluir" 
+                            >Excluir</button>
                         </div>
                     </form>
                 </div>
