@@ -45,9 +45,30 @@ async function getAPI(url) {
 
 getAPI(url);
 
+//LIMPAR OS CAMPOS
+function limparCampos() {
+    document.getElementById("numero").value = "";
+    document.getElementById("andar").value = "";
+    document.getElementById("bloco").value = "";
+    document.getElementById("id").value = "",
+    document.getElementById('btn-cadastrar').textContent = 'Cadastrar'
+}
+
+//PEGAR DADOS DA LINHA DA TABELA E MOSTRAR NO FORMULÁRIO
+function preencherFormulario(linha) {
+    const id = linha.cells[0].textContent;
+    const numero = linha.cells[1].textContent;
+    const andar = linha.cells[2].textContent;
+    const bloco = linha.cells[3].textContent;
+
+    document.getElementById('id').value = id;
+    document.getElementById('numero').value = numero;
+    document.getElementById('andar').value = andar;
+    document.getElementById('bloco').value = bloco;
+    document.getElementById('btn-cadastrar').textContent = 'Atualizar'
+}
 
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO
-
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const numero = document.getElementById("numero").value;
@@ -76,7 +97,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             });
 
             if (response.ok) {
-                alert("Dados atualizados com sucesso!");
+                alert("Apartamento atualizado com sucesso!");
                 getAPI(url);
             } else {
                 alert("Erro ao atualizar os dados.");
@@ -103,7 +124,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             });
 
             if (response.ok) {
-                alert("Dados cadastrados com sucesso!");
+                alert("Apartamento cadastrado com sucesso!");
                 getAPI(url);
             } else {
                 alert("Erro ao cadastrar os dados.");
@@ -114,44 +135,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-
-//LIMPAR OS CAMPOS
-
-
-function limparCampos() {
-    document.getElementById("numero").value = "";
-    document.getElementById("andar").value = "";
-    document.getElementById("bloco").value = "";
-    document.getElementById("id").value = "",
-        document.getElementById('btn-cadastrar').textContent = 'Cadastrar'
-}
-
-//PEGAR DADOS DA LINHA DA TABELA E MOSTRAR NO FORMULÁRIO
-
-function preencherFormulario(linha) {
-    const id = linha.cells[0].textContent;
-    const numero = linha.cells[1].textContent;
-    const andar = linha.cells[2].textContent;
-    const bloco = linha.cells[3].textContent;
-
-
-
-    document.getElementById('id').value = id;
-    document.getElementById('numero').value = numero;
-    document.getElementById('andar').value = andar;
-    document.getElementById('bloco').value = bloco;
-    document.getElementById('btn-cadastrar').textContent = 'Atualizar'
-}
-
-function excluir() {
-
-    console.log("botão editar pressionado");
-}
-
-
-
 //DELETAR OS DADOS SELECIONADOS
-
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
 //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
