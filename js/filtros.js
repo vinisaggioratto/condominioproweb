@@ -22,10 +22,6 @@ async function getAPI2(url) {
 
         console.log(condominoNome);
     }
-
-    if (response) {
-        show(data);
-    }
 }
 
 getAPI2(url1);
@@ -38,10 +34,11 @@ async function getAPI3(url) {
 
     for (let pais of data1) {
         let paisNome = pais.nome;
+        
 
         // Selecione o elemento <select> pelo ID
-        const selectPais = document.getElementById("pais_id");
-
+        const selectPais = document.getElementById("pais_nome");
+        
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = paisNome;
@@ -49,10 +46,6 @@ async function getAPI3(url) {
 
         // Adicione a opção ao <select>
         selectPais.appendChild(optionElement);
-    }
-
-    if (response) {
-        show(data);
     }
 }
 

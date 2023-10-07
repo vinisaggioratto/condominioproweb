@@ -24,11 +24,11 @@ function show(pais) {
 
     document.getElementById("bodytabela").innerHTML = tab;
 }
-
+const data = "";
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
-    var data = await response.json();
+    data = await response.json();
     console.log(data);
 
     if (response) {
