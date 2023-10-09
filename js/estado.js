@@ -42,6 +42,7 @@ async function getAPI(url) {
 getAPI(url);
 
 //PEGAR O ID DO PAIS
+/*
 function teste(){
 const url22 = "http://localhost:8080/pais";
 
@@ -63,7 +64,7 @@ async function pegarPais(url) {
     }
 }
 pegarPais(url22);
-}
+}*/
 
 
 
@@ -101,7 +102,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             id,
             nome,
             pais
-            //testeSalvar
         };
 
         try {
@@ -127,7 +127,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
         const data = {
             nome,
             pais
-            //testeSalvar
         };
 
         try {

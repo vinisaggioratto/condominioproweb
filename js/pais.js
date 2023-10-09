@@ -24,7 +24,7 @@ function show(pais) {
 
     document.getElementById("bodytabela").innerHTML = tab;
 }
-const data = "";
+//const data = "";
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 

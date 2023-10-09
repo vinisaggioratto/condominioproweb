@@ -1,12 +1,13 @@
 const url1 = "http://localhost:8080/condomino";
 const url2 = "http://localhost:8080/pais";
+const url3 = "http://localhost:8080/estados";
 
-async function getAPI2(url) {
+async function getAPI1(url) {
     const response = await fetch(url, { method: "GET" });
 
-    var dataa = await response.json();
+    var data = await response.json();
 
-    for (let condomino of dataa) {
+    for (let condomino of data) {
         let condominoNome = condomino.nome;
 
         // Selecione o elemento <select> pelo ID
@@ -23,16 +24,15 @@ async function getAPI2(url) {
         console.log(condominoNome);
     }
 }
+getAPI1(url1);
 
-getAPI2(url1);
 
-
-async function getAPI3(url) {
+async function getAPI2(url) {
     const response = await fetch(url, { method: "GET" });
 
-    var data1 = await response.json();
+    var data = await response.json();
 
-    for (let pais of data1) {
+    for (let pais of data) {
         let paisNome = pais.nome;
         
 
@@ -48,5 +48,26 @@ async function getAPI3(url) {
         selectPais.appendChild(optionElement);
     }
 }
+getAPI2(url2);
 
-getAPI3(url2);
+async function getAPI3(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let estado of data) {
+        let estadoNome = estado.nome;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectEstado = document.getElementById("estado_nome");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = estadoNome;
+        optionElement.textContent = estadoNome;
+
+        // Adicione a opção ao <select>
+        selectEstado.appendChild(optionElement);
+    }
+}
+getAPI3(url3);
