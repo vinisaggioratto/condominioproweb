@@ -1,6 +1,8 @@
 const url1 = "http://localhost:8080/condomino";
 const url2 = "http://localhost:8080/pais";
 const url3 = "http://localhost:8080/estados";
+const url4 = "http://localhost:8080/cidades";
+
 
 async function getAPI1(url) {
     const response = await fetch(url, { method: "GET" });
@@ -71,3 +73,25 @@ async function getAPI3(url) {
     }
 }
 getAPI3(url3);
+
+async function getAPI4(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let cidade of data) {
+        let cidadeNome = cidade.nome;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectCidade = document.getElementById("cidade_nome");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = cidadeNome;
+        optionElement.textContent = cidadeNome;
+
+        // Adicione a opção ao <select>
+        selectCidade.appendChild(optionElement);
+    }
+}
+getAPI4(url4);

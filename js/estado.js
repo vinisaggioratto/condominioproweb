@@ -80,7 +80,6 @@ function preencherFormulario(linha) {
     const estado = linha.cells[1].textContent;
     const pais = linha.cells[2].textContent;
 
-    console.log(id_pais);
     document.getElementById('id').value = id;
     document.getElementById('nome').value = estado;
     document.getElementById('pais_nome').value = pais;
