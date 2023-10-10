@@ -60,11 +60,14 @@ function preencherFormulario(linha) {
     const numero = linha.cells[1].textContent;
     const andar = linha.cells[2].textContent;
     const bloco = linha.cells[3].textContent;
+    var stats = linha.cells[4].textContent;
 
     document.getElementById('id').value = id;
     document.getElementById('numero').value = numero;
     document.getElementById('andar').value = andar;
     document.getElementById('bloco').value = bloco;
+    document.getElementById('select-cadastro').value = stats;
+
     document.getElementById('btn-cadastrar').textContent = 'Atualizar'
 }
 

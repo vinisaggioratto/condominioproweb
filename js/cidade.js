@@ -58,11 +58,12 @@ function preencherFormulario(linha) {
     document.getElementById('nome').value = cidade;
     document.getElementById('estado_nome').value = estado;
     document.getElementById('btn-cadastrar').textContent = 'Atualizar';
-    teste();
+    //teste();
 }
 
+
+/*
 //PEGAR O ID DO ESTADO
-/**/
 function teste(){
     const url1 = "http://localhost:8080/estados";
     
@@ -84,6 +85,7 @@ function teste(){
     }
     pegarEstado(url1);
     }
+*/
 
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO 
 //ESTÁ COM ERRO NÃO CADASTRA NEM ALTERA
@@ -91,7 +93,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
     const estado = document.getElementById("estado_nome").value;
-    //const estado = document.getElementById("idestado").value;
     console.log("ID - " + id)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
@@ -114,20 +115,8 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Cidade atualizada com sucesso!");
                 getAPI(url);
-                console.log("-----------");
-                console.log("Cidade atualizada com sucesso!");
-                console.log("ID ENVIADO - " + id);
-                console.log("NOME ENVIADO - " + nome);
-                console.log("ESTADO ENVIADO - " + estado);
-                console.log("-----------");
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----------");
-                console.log("Erro ao atualizar os dados.");
-                console.log("ID ENVIADO - " + id);
-                console.log("NOME ENVIADO - " + nome);
-                console.log("ESTADO ENVIADO - " + estado);
-                console.log("-----------");
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
@@ -151,21 +140,9 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Cidade cadastrada com sucesso!");
                 getAPI(url);
-                console.log("-----------");
-                console.log("Cidade cadastrada com sucesso!");
-                console.log("ID ENVIADO - " + id);
-                console.log("NOME ENVIADO - " + nome);
-                console.log("ESTADO ENVIADO - " + estado);
-                console.log("-----------");
 
             } else {
                 alert("Erro ao cadastrar os dados.");
-                console.log("-----------");
-                console.log("Erro ao cadastrar os dados.");
-                console.log("ID ENVIADO - " + id);
-                console.log("NOME ENVIADO - " + nome);
-                console.log("ESTADO ENVIADO - " + estado);
-                console.log("-----------");
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
