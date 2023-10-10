@@ -214,7 +214,7 @@
                         </div>
                         <div id="select-status">
                             <label for="">Estado: </label>
-                            <select name="estado_nome" id="estado_nome">
+                            <select name="estado_nome" id="estado_nome" onclick="teste()">
                             </select>
                         </div>
                         <div id="buttons-cadastro">
@@ -224,6 +224,10 @@
                                 onclick="limparCampos()">Limpar</button>
                             <button type="button" class="btn btn-dark" id="btn-excluir" 
                             >Excluir</button>
+                        </div>
+                        <div>
+                            <label for="">Id Estado: </label>
+                            <input type="number" name="ididestado" id="idestado" disabled required>
                         </div>
                     </form>
                 </div>

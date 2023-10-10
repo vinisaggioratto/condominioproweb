@@ -66,9 +66,6 @@ async function pegarPais(url) {
 pegarPais(url22);
 }*/
 
-
-
-
 //LIMPAR CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
@@ -93,7 +90,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
     const pais = document.getElementById("pais_nome").value;
-    const testeSalvar = document.getElementById("texto_oculto").value;
     console.log("ID - " + id)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
@@ -116,6 +112,11 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Estado atualizado com sucesso!");
                 getAPI(url);
+                console.log("-----");
+                console.log("ID ATUALIZADO: " + id);
+                console.log("NOME ATUALIZADO: " + nome);
+                console.log("PAIS ATUALIZADO: " + pais);
+                console.log("-----");
             } else {
                 alert("Erro ao atualizar os dados.");
             }
