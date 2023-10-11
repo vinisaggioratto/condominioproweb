@@ -72,7 +72,7 @@ function limparCampos() {
 function preencherFormulario(linha) {
     const id = linha.cells[0].textContent;
     const nome = linha.cells[1].textContent;
-    const cpfcnpj = linha.cells[2].textContent;
+    const cpf_cnpj = linha.cells[2].textContent;
     const telefone_celular = linha.cells[3].textContent;
     const especialidade = linha.cells[4].textContent;
     const rua = linha.cells[5].textContent;
@@ -84,7 +84,7 @@ function preencherFormulario(linha) {
 
     document.getElementById('id').value = id;
     document.getElementById('nome').value = nome;
-    document.getElementById('cpf_cnpj').value = cpfcnpj;
+    document.getElementById('cpf_cnpj').value = cpf_cnpj;
     document.getElementById('telefone_celular').value = telefone_celular;
     document.getElementById('especialidade').value = especialidade;
     document.getElementById('rua').value = rua;
@@ -99,7 +99,7 @@ function preencherFormulario(linha) {
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
-    const cpfcnpj = document.getElementById("cpf_cnpj").value;
+    const cpf_cnpj = document.getElementById("cpf_cnpj").value;
     const telefone_celular = document.getElementById("telefone_celular").value;
     const especialidade = document.getElementById("especialidade").value;
     const rua = document.getElementById("rua").value;
@@ -111,7 +111,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     console.log("-----");
     console.log("ID ATUALIZADO: " + id);
     console.log("NOME ATUALIZADO: " + nome);
-    console.log("CPF ATUALIZADO: " + cpfcnpj);
+    console.log("CPF ATUALIZADO: " + cpf_cnpj);
     console.log("TELEFONE ATUALIZADO: " + telefone_celular);
     console.log("ESP. ATUALIZADO: " + especialidade);
     console.log("RUA ATUALIZADO: " + rua);
@@ -124,16 +124,16 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
-            id,
-            nome,
-            cpfcnpj,
-            telefone_celular,
-            especialidade,
-            rua,
             bairro,
-            numero,
             cidade,
-            estado
+            cpf_cnpj,
+            especialidade,
+            estado,
+            nome,
+            numero,
+            rua,
+            telefone_celular,
+            id
         };
 
         try {
@@ -151,7 +151,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
                 console.log("-----");
                 console.log("ID ATUALIZADO: " + id);
                 console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + cpfcnpj);
+                console.log("CPF ATUALIZADO: " + cpf_cnpj);
                 console.log("TELEFONE ATUALIZADO: " + telefone_celular);
                 console.log("ESP. ATUALIZADO: " + especialidade);
                 console.log("RUA ATUALIZADO: " + rua);
@@ -165,7 +165,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
                 console.log("-----");
                 console.log("ID ATUALIZADO: " + id);
                 console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + cpfcnpj);
+                console.log("CPF ATUALIZADO: " + cpf_cnpj);
                 console.log("TELEFONE ATUALIZADO: " + telefone_celular);
                 console.log("ESP. ATUALIZADO: " + especialidade);
                 console.log("RUA ATUALIZADO: " + rua);
@@ -181,15 +181,15 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
 
     } else { //ENVIA OS DADOS DO FORMULÁRIO PARA CADASTRO
         const data = {
-            nome,
-            cpfcnpj,
-            telefone_celular,
-            especialidade,
-            rua,
             bairro,
-            numero,
             cidade,
-            estado
+            cpf_cnpj,
+            especialidade,
+            estado,
+            nome,
+            numero,
+            rua,
+            telefone_celular
         };
 
         try {
@@ -213,3 +213,34 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
+document.getElementById("btn-excluir").addEventListener("click", async () => {
+
+    //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
+
+    const confirmacao = confirm("Tem certeza que deseja excluir?");
+
+    if (confirmacao) {
+
+        try {
+            const id = document.getElementById("id").value;
+            console.log(id);
+            console.log("ID PREENCHIDO");
+
+            const response = await fetch(url + "/" + id, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+
+            if (response.ok) {
+                alert("Fornecedor deletado com sucesso!");
+                getAPI(url);
+            } else {
+                alert("Erro ao deletar fornecedor. Confira se não existe vínculo.");
+            }
+        } catch (error) {
+            console.error("Erro na requisição:", error);
+        }
+    }
+})
