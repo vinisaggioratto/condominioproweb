@@ -214,7 +214,7 @@
                         </div>
                         <div>
                             <label for="">Cpf: </label>
-                            <input type="text" name="cpfcnpj" id="cpfcnpj" required>
+                            <input type="text" name="cpf" id="cpf" required>
                         </div>
                         <div>
                             <label for="">Rg: </label>
@@ -222,13 +222,13 @@
                         </div>
                         <div>
                             <label for="">Telefone celular: </label>
-                            <input type="text" name="telefone-cel" id="telefone-cel" required>
+                            <input type="text" name="telefone_celular" id="telefone_celular" required>
                         </div>
                         <div id="select-status">
                             <label for="">Morador: </label>
-                            <select name="select-cadastro" id="select-cadastro">
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                            <select name="select_morador" id="select_morador">
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
                             </select>
                         </div>
                         <div id="select-status2">
@@ -239,10 +239,8 @@
                         </div>
                         <div id="select-status3">
                             <label for="">Tipo Dependente: </label>
-                            <select class="select-cadastro" name="select-cadastro3" id="select-cadastro3">
-                                <option value="filho">Filho(a)</option>
-                                <option value="conjuge">Conjuge</option>
-                                <option value="pais">Pai/Mãe</option>
+                            <select class="select-cadastro" name="select_tipo_dep" id="select_tipo_dep">
+
                             </select>
                         </div>
                         <div id="buttons-cadastro">
@@ -279,7 +277,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/dependente.js"></script>
-    <script src="js/condominofiltros.js"></script>
+    <script src="js/filtros.js"></script>
 
 
 </body>

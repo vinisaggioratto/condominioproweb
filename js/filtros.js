@@ -2,6 +2,7 @@ const url1 = "http://localhost:8080/condomino";
 const url2 = "http://localhost:8080/pais";
 const url3 = "http://localhost:8080/estados";
 const url4 = "http://localhost:8080/cidades";
+const url5 = "http://localhost:8080/tipodependentes";
 
 
 async function getAPI1(url) {
@@ -94,4 +95,26 @@ async function getAPI4(url) {
         selectCidade.appendChild(optionElement);
     }
 }
-getAPI4(url4);
+getAPI4(url5);
+
+async function getAPI5(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let tipoDependente of data) {
+        let tipoDep = tipoDependente.descricao;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectTipoDep = document.getElementById("select_tipo_dep");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = tipoDep;
+        optionElement.textContent = tipoDep;
+
+        // Adicione a opção ao <select>
+        selectTipoDep.appendChild(optionElement);
+    }
+}
+getAPI5(url5);

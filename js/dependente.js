@@ -14,7 +14,6 @@ function show(dependentes) {
             <th scope="col">Morador</th>
             <th scope="col">Cond. Vinculado</th>
             <th scope="col">Tipo Dep.</th>
-            <th scope="col">Ações</th>
         </tr>
     </thead>
     `;
@@ -31,7 +30,6 @@ function show(dependentes) {
             <td>${dependente.morador}</td>
             <td>${dependente.condomino}</td>
             <td>${dependente.tipoDependente}</td>
-            <td><i class="bi bi-pencil-square"></i><i class="bi bi-trash3-fill"></i></td>
         </tr>
         `;
     }
@@ -54,8 +52,14 @@ getAPI(url);
 
 
 function limparCampos() {
-    document.getElementById("numero").value = "";
-    document.getElementById("andar").value = "";;
-    document.getElementById("bloco").value = "";;
+    document.getElementById("id").value = "";
+    document.getElementById("nome").value = "";
+    document.getElementById("cpf").value = "";
+    document.getElementById("rg").value = "";
+    document.getElementById("telefone_celular").value = "";
+    document.getElementById("select_morador").value = "";
+    document.getElementById("select-condomino").value = "";
+    document.getElementById("select_tipo_dep").value = "";
+    document.getElementById('btn-cadastrar').textContent = 'Cadastrar';
 }
 
