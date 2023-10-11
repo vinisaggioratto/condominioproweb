@@ -213,6 +213,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
+//DELETAR
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
