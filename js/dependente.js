@@ -54,8 +54,12 @@ getAPI(url);
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("nome").value = "";
-    document.getElementById("cpf").value = "";
-    document.getElementById("rg").value = "";
+
+    document.getElementById('cpf').value = "";
+    var inputcpf = document.querySelector('#cpf');
+    inputcpf.disabled = false;
+
+    document.getElementById('rg').value = "";
     document.getElementById("telefone_celular").value = "";
     document.getElementById("select_morador").value = "";
     document.getElementById("select-condomino").value = "";
@@ -77,6 +81,8 @@ function preencherFormulario(linha) {
     document.getElementById('id').value = id;
     document.getElementById('nome').value = nome;
     document.getElementById('cpf').value = cpf;
+    var inputcpf = document.querySelector('#cpf');
+    inputcpf.disabled = true;
     document.getElementById('rg').value = rg;
     document.getElementById('telefone_celular').value = telefone_celular;
     document.getElementById('select_morador').value = select_morador;
