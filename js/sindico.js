@@ -124,9 +124,9 @@ function preencherFormulario(linha) {
 
     document.getElementById('id').value = id;
     document.getElementById('select-condomino').value = condomino;
-    document.getElementById('data_inicial').value = formatarData(data_inicial);
-    document.getElementById('data_final_prevista').value = formatarData(data_final_prevista);
-    document.getElementById('data_final').value = formatarData(data_final);
+    document.getElementById('data_inicial').value = formatDataUs(formatarData(data_inicial));
+    document.getElementById('data_final_prevista').value = formatDataUs(formatarData(data_final_prevista));
+    document.getElementById('data_final').value = formatDataUs(formatarData(data_final));
     document.getElementById('select_cadastro2').value = select_cadastro;
     document.getElementById('btn-cadastrar').textContent = 'Atualizar';
 }
