@@ -56,6 +56,7 @@ function limparCampos() {
     document.getElementById("ativo").value = "";
     document.getElementById("modelo").value = "";
     document.getElementById("select-condomino").value = "";
+    document.getElementById('btn-cadastrar').textContent = 'Cadastrar';
 }
 
 //PEGAR DADOS DA LINHA DA TABELA E MOSTRAR NO FORMULÁRIO
@@ -85,7 +86,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const placa = document.getElementById('placa').value;
     const marca = document.getElementById('marca').value;
     const cor = document.getElementById('cor').value;
-    const ativo = getElementById('ativo').value;
+    const ativo = document.getElementById('ativo').value;
     const modelo = document.getElementById('modelo').value;
     const condomino = document.getElementById('select-condomino').value;
 
