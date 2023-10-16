@@ -98,12 +98,6 @@ function preencherFormulario(linha) {
     const parcelamento = linha.cells[5].textContent;
 
     console.log("Data pagamento valor original: " + data_operacao);
-/*
-    const date = new Date();
-    const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
-    const formattedDate = formatter.format(date);
-    console.log(formattedDate);
-*/
 
     document.getElementById('id').value = id;
     document.getElementById('select-condomino').value = condomino;

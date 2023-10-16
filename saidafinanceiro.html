@@ -210,9 +210,8 @@
                         </div>
                         <div id="select-status">
                             <label for="">Fornecedor: </label>
-                            <select name="select-cadastro" id="select-cadastro">
-                                <option value="1">CASAN</option>
-                                <option value="2">CELESC</option>
+                            <select name="select_fornecedor" id="select_fornecedor">
+
                             </select>
                         </div>
                         <div>
@@ -225,17 +224,17 @@
                         </div>
                         <div>
                             <label for="">Data de Pagamento: </label>
-                            <input type="date" name="data-pagamento" id="data-pagamento" required>
+                            <input type="date" name="data_operacao" id="data_operacao" required>
                         </div>
                         <div>
                             <label for="">Nota Fiscal: </label>
-                            <input type="text" name="nota-fiscal" id="nota-fiscal" required>
+                            <input type="text" name="nota_fiscal" id="nota_fiscal" required>
                         </div>
                         <div id="select-status2">
                             <label for="">Parcelado: </label>
-                            <select class="select-cadastro" name="select-cadastro2" id="select-cadastro2">
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                            <select class="select-cadastro" name="parcelamento" id="parcelamento">
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
                             </select>
                         </div>
                         <div id="buttons-cadastro">
@@ -278,6 +277,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/saidafinanceiro.js"></script>
+    <script src="js/filtros.js"></script>
 
 
 </body>

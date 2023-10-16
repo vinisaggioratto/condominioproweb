@@ -3,6 +3,7 @@ const url2 = "http://localhost:8080/pais";
 const url3 = "http://localhost:8080/estados";
 const url4 = "http://localhost:8080/cidades";
 const url5 = "http://localhost:8080/tipodependentes";
+const url6 = "http://localhost:8080/fornecedores";
 
 
 async function getAPI1(url) {
@@ -95,7 +96,7 @@ async function getAPI4(url) {
         selectCidade.appendChild(optionElement);
     }
 }
-getAPI4(url5);
+getAPI4(url4);
 
 async function getAPI5(url) {
     const response = await fetch(url, { method: "GET" });
@@ -118,3 +119,25 @@ async function getAPI5(url) {
     }
 }
 getAPI5(url5);
+
+async function getAPI6(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let fornecedor of data) {
+        let fornec = fornecedor.nome;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectFornecedor = document.getElementById("select_fornecedor");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = fornec;
+        optionElement.textContent = fornec;
+
+        // Adicione a opção ao <select>
+        selectFornecedor.appendChild(optionElement);
+    }
+}
+getAPI6(url6);

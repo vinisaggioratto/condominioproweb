@@ -13,7 +13,6 @@ function show(manutencoes) {
             <th scope="col">Data Inicial</th>
             <th scope="col">Data Final</th>
             <th scope="col">Fornecedor</th>
-            <th scope="col">Ações</th>
         </tr>
     </thead>
     `;
@@ -35,7 +34,6 @@ function show(manutencoes) {
             <td>${formatter.format(manutencao.data_inicial)}</td> 
             <td>${formatter.format(manutencao.data_final)}</td> 
             <td>${manutencao.fornecedor}</td>
-            <td><i class="bi bi-pencil-square"></i><i class="bi bi-trash3-fill"></i></td>
         </tr>
         `;
     }
