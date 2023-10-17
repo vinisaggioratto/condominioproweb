@@ -27,10 +27,6 @@ function show(sindicos) {
         let data_fp = formatter.format(sindico.data_final_prevista);
         let data_f = formatter.format(sindico.data_final);
 
-        //<td>${sindico.condomino.nome}</td>
-        //<td>${formatter.format(sindico.data_inicial)}</td>
-        //<td>${formatter.format(sindico.data_final_prevista)}</td>
-        //<td>${formatter.format(sindico.data_final)}</td>
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
