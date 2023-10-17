@@ -33,7 +33,7 @@ function show(manutencoes) {
             <td>${manutencao.valor}</td>
             <td>${formatter.format(manutencao.data_inicial)}</td> 
             <td>${formatter.format(manutencao.data_final)}</td> 
-            <td>${manutencao.fornecedor}</td>
+            <td>${manutencao.fornecedor.nome}</td>
         </tr>
         `;
     }
@@ -149,7 +149,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             valor,
             data_inicial,
             data_final,
-            select_fornecedor,
+            fornecedor,
             id
         };
 
@@ -162,7 +162,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
                 body: JSON.stringify(data)
             });
             if (response.ok) {
-                alert("Síndico atualizado com sucesso!");
+                alert("Manutenção atualizado com sucesso!");
                 getAPI(url);
                 console.log("-----");
                 console.log("ID ATUALIZADO: " + id);
@@ -196,7 +196,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             valor,
             data_inicial,
             data_final,
-            select_fornecedor
+            fornecedor
         };
 
         try {
