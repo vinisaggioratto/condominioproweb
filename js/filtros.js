@@ -4,6 +4,8 @@ const url3 = "http://localhost:8080/estados";
 const url4 = "http://localhost:8080/cidades";
 const url5 = "http://localhost:8080/tipodependentes";
 const url6 = "http://localhost:8080/fornecedores";
+const url7 = "http://localhost:8080/sindico";
+
 
 
 async function getAPI1(url) {
@@ -141,3 +143,25 @@ async function getAPI6(url) {
     }
 }
 getAPI6(url6);
+
+async function getAPI7(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let sindico of data) {
+        let sindicos = sindico.condomino.nome;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectSindico = document.getElementById("select_sindico");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = sindicos;
+        optionElement.textContent = sindicos;
+
+        // Adicione a opção ao <select>
+        selectSindico.appendChild(optionElement);
+    }
+}
+getAPI7(url7);
