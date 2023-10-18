@@ -112,18 +112,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const descricao = document.getElementById("descricao").value;
     const data_aviso = formatDataUs(document.getElementById("data_aviso").value);
     const sindico = document.getElementById("select_sindico").value;
-    //const condomino = document.getElementById("select_sindico").value;
-    //let teste = parseInt(1);
-    //const sindico = document.getElementById("select_sindico").value  = teste;
-    
-    console.log("Dados para envio:")
-    console.log("-----");
-    console.log("ID ATUALIZADO: " + id);
-    console.log("NOME ATUALIZADO: " + sindico);
-    console.log("DESCRIÇÃO ATUALIZADO: " + descricao);
-    console.log("DATA AVISO ATUALIZADO: " + data_aviso);
-    console.log("SINDICO ATUALIZADO: " + sindico);
-    console.log("-----");
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
         const data = {
@@ -146,22 +134,10 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Aviso atualizado com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("DESCRIÇÃO ATUALIZADO: " + descricao);
-                console.log("DATA AVISO ATUALIZADO: " + data_aviso);
-                console.log("SINDICO ATUALIZADO: " + sindico);
-                console.log("-----");
+
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("DESCRIÇÃO ATUALIZADO: " + descricao);
-                console.log("DATA AVISO ATUALIZADO: " + data_aviso);
-                console.log("SINDICO ATUALIZADO: " + sindico);
-                console.log("-----");
+
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
