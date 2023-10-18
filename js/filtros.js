@@ -5,6 +5,7 @@ const url4 = "http://localhost:8080/cidades";
 const url5 = "http://localhost:8080/tipodependentes";
 const url6 = "http://localhost:8080/fornecedores";
 const url7 = "http://localhost:8080/sindico";
+const url8 = "http://localhost:8080/apartamentos";
 
 
 
@@ -168,3 +169,26 @@ async function getAPI7(url) {
 }
 }
 getAPI7(url7);
+
+async function getAPI8(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let apartamento of data) {
+            let apto = apartamento.numero;
+        
+        // Selecione o elemento <select> pelo ID
+        const selectApto = document.getElementById("select_apartamento");
+        
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = apto;
+        optionElement.textContent = apto;
+
+        // Adicione a opção ao <select>
+        selectApto.appendChild(optionElement);
+    
+}
+}
+getAPI8(url8);
