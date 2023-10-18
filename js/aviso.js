@@ -1,5 +1,5 @@
 const url = "http://localhost:8080/avisos";
-const url2 = "http://localhost:8080/sindico";
+
 
 function show(avisos) {
     let tab =
@@ -29,7 +29,7 @@ function show(avisos) {
             <td>${aviso.nome}</td>
             <td>${aviso.descricao}</td>
             <td>${formatter.format(aviso.data_aviso)}</td> 
-            <td>${aviso.sindico.condomino.nome}</td>
+            <td>${aviso.sindico.nome}</td>
         </tr>
         `;
     }
@@ -126,7 +126,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     console.log("-----");
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
-        compararSindico();
         const data = {
             nome,
             descricao,
@@ -230,32 +229,4 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
     }
 })
 
-//filtrar o id do sindico
-
-getAPI2(url2);
-
-async function getAPI2(url2) {
-    const response = await fetch(url2, { method: "GET" });
-
-    var data1 = await response.json();
-    console.log(data1);
-    
-    if (response) {
-        compararSindico(data1);
-    }
-}
-
-
-function compararSindico(sindicos){
-
-    const sindicoSelect = document.getElementById("select_sindico").value;
-    for (let sindico of sindicos) {
-        let sindNome = sindico.nome;
-        let sindCodigo = 0;
-        if(sindNome == sindicoSelect){
-            alert("Código do síndico selecionado: " + sindico.id);
-            sindCodigo = sindico.id;
-        }
-    }
-}
 

@@ -22,7 +22,7 @@ function show(sindicos) {
         const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
         const formattedDate = formatter.format(date);
         console.log(formattedDate);
-        let teste = sindico.condomino.nome;  
+        let teste = sindico.nome;  
         let data_i = formatter.format(sindico.data_inicial);
         let data_fp = formatter.format(sindico.data_final_prevista);
         let data_f = formatter.format(sindico.data_final);
@@ -130,7 +130,7 @@ function preencherFormulario(linha) {
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
-    const condomino = document.getElementById("select-condomino").value;
+    const nome = document.getElementById("select-condomino").value;
     const data_inicial = formatDataUs(document.getElementById("data_inicial").value);
     const data_final_prevista = formatDataUs(document.getElementById("data_final_prevista").value);
     const data_final = formatDataUs(document.getElementById("data_final").value);
@@ -139,7 +139,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     console.log("Dados para envio:")
     console.log("-----");
     console.log("ID ATUALIZADO: " + id);
-    console.log("NOME ATUALIZADO: " + condomino);
+    console.log("NOME ATUALIZADO: " + condomino_nome);
     console.log("CPF ATUALIZADO: " + data_inicial);
     console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
     console.log("ESP. ATUALIZADO: " + data_final);
@@ -151,7 +151,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
 
         const data = {
             ativo,
-            condomino,
+            nome,
             data_final,
             data_final_prevista,
             data_inicial,
@@ -173,7 +173,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
                 getAPI(url);
                 console.log("-----");
                 console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + condomino);
+                console.log("NOME ATUALIZADO: " + nome);
                 console.log("CPF ATUALIZADO: " + data_inicial);
                 console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
                 console.log("ESP. ATUALIZADO: " + data_final);
@@ -184,7 +184,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
                 alert("Erro ao atualizar os dados.");
                 console.log("-----");
                 console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + condomino);
+                console.log("NOME ATUALIZADO: " + nome);
                 console.log("CPF ATUALIZADO: " + data_inicial);
                 console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
                 console.log("ESP. ATUALIZADO: " + data_final);
@@ -199,7 +199,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     } else { //ENVIA OS DADOS DO FORMULÁRIO PARA CADASTRO
         const data = {
             ativo,
-            condomino,
+            nome,
             data_final,
             data_final_prevista,
             data_inicial

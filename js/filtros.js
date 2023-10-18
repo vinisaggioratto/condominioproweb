@@ -150,7 +150,9 @@ async function getAPI7(url) {
     var data = await response.json();
 
     for (let sindico of data) {
-        let sindicos = sindico.condomino.nome;
+        //SÓ MOSTRA OS SINDICOS ATIVOS
+        if(sindico.ativo=="Sim"){
+            let sindicos = sindico.nome;
         
         // Selecione o elemento <select> pelo ID
         const selectSindico = document.getElementById("select_sindico");
@@ -163,5 +165,6 @@ async function getAPI7(url) {
         // Adicione a opção ao <select>
         selectSindico.appendChild(optionElement);
     }
+}
 }
 getAPI7(url7);
