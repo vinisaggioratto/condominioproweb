@@ -28,12 +28,12 @@ function show(entradasestoque) {
 
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${entradaestoque.id}</td>
-            <td>${entradaestoque.itemEstoque}</td>
+            <td>${entradaestoque.itemEstoque.descricao}</td>
             <td>${entradaestoque.nome}</td>
             <td>${entradaestoque.quantidade}</td>
             <td>${entradaestoque.valor_unitario}</td>
             <td>${formatter.format(entradaestoque.data_entrada)}</td> 
-            <td>${entradaestoque.fornecedor}</td>
+            <td>${entradaestoque.fornecedor.nome}</td>
         </tr>
         `;
     }

@@ -213,4 +213,4 @@ async function getAPI9(url) {
         select_item_estoque.appendChild(optionElement);
     }
 }
-getAPI8(url9);
+getAPI9(url9);
