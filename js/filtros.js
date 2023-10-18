@@ -6,6 +6,7 @@ const url5 = "http://localhost:8080/tipodependentes";
 const url6 = "http://localhost:8080/fornecedores";
 const url7 = "http://localhost:8080/sindico";
 const url8 = "http://localhost:8080/apartamentos";
+const url9 = "http://localhost:8080/itensestoque";
 
 
 
@@ -41,11 +42,11 @@ async function getAPI2(url) {
 
     for (let pais of data) {
         let paisNome = pais.nome;
-        
+
 
         // Selecione o elemento <select> pelo ID
         const selectPais = document.getElementById("pais_nome");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = paisNome;
@@ -64,10 +65,10 @@ async function getAPI3(url) {
 
     for (let estado of data) {
         let estadoNome = estado.nome;
-        
+
         // Selecione o elemento <select> pelo ID
         const selectEstado = document.getElementById("estado_nome");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = estadoNome;
@@ -86,10 +87,10 @@ async function getAPI4(url) {
 
     for (let cidade of data) {
         let cidadeNome = cidade.nome;
-        
+
         // Selecione o elemento <select> pelo ID
         const selectCidade = document.getElementById("cidade_nome");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = cidadeNome;
@@ -108,10 +109,10 @@ async function getAPI5(url) {
 
     for (let tipoDependente of data) {
         let tipoDep = tipoDependente.descricao;
-        
+
         // Selecione o elemento <select> pelo ID
         const selectTipoDep = document.getElementById("select_tipo_dep");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = tipoDep;
@@ -130,10 +131,10 @@ async function getAPI6(url) {
 
     for (let fornecedor of data) {
         let fornec = fornecedor.nome;
-        
+
         // Selecione o elemento <select> pelo ID
         const selectFornecedor = document.getElementById("select_fornecedor");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = fornec;
@@ -152,21 +153,21 @@ async function getAPI7(url) {
 
     for (let sindico of data) {
         //SÓ MOSTRA OS SINDICOS ATIVOS
-        if(sindico.ativo=="Sim"){
+        if (sindico.ativo == "Sim") {
             let sindicos = sindico.nome;
-        
-        // Selecione o elemento <select> pelo ID
-        const selectSindico = document.getElementById("select_sindico");
-        
-        // Crie uma opção com o nome do condomínio
-        const optionElement = document.createElement("option");
-        optionElement.value = sindicos;
-        optionElement.textContent = sindicos;
 
-        // Adicione a opção ao <select>
-        selectSindico.appendChild(optionElement);
+            // Selecione o elemento <select> pelo ID
+            const selectSindico = document.getElementById("select_sindico");
+
+            // Crie uma opção com o nome do condomínio
+            const optionElement = document.createElement("option");
+            optionElement.value = sindicos;
+            optionElement.textContent = sindicos;
+
+            // Adicione a opção ao <select>
+            selectSindico.appendChild(optionElement);
+        }
     }
-}
 }
 getAPI7(url7);
 
@@ -176,11 +177,11 @@ async function getAPI8(url) {
     var data = await response.json();
 
     for (let apartamento of data) {
-            let apto = apartamento.numero;
-        
+        let apto = apartamento.numero;
+
         // Selecione o elemento <select> pelo ID
         const selectApto = document.getElementById("select_apartamento");
-        
+
         // Crie uma opção com o nome do condomínio
         const optionElement = document.createElement("option");
         optionElement.value = apto;
@@ -188,7 +189,28 @@ async function getAPI8(url) {
 
         // Adicione a opção ao <select>
         selectApto.appendChild(optionElement);
-    
-}
+    }
 }
 getAPI8(url8);
+
+async function getAPI9(url) {
+    const response = await fetch(url, { method: "GET" });
+
+    var data = await response.json();
+
+    for (let itemEstoque of data) {
+        let item = itemEstoque.descricao;
+
+        // Selecione o elemento <select> pelo ID
+        const select_item_estoque = document.getElementById("select_item_estoque");
+
+        // Crie uma opção com o nome do condomínio
+        const optionElement = document.createElement("option");
+        optionElement.value = item;
+        optionElement.textContent = item;
+
+        // Adicione a opção ao <select>
+        select_item_estoque.appendChild(optionElement);
+    }
+}
+getAPI8(url9);
