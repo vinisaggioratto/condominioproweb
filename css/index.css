@@ -32,11 +32,19 @@
     align-items: center;
 }
 
-#btn-login {
+#btn-login{
     border: 2px solid white;
     background-color: #09333F;
     color: white;
 }
+
+#btn-login a{
+    /*border: 2px solid white;*/
+    text-decoration: none;
+    background-color: #09333F;
+    color: white;
+}
+
 
 #container-dados {
     border: 1px solid #09333F;

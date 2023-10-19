@@ -29,7 +29,7 @@ function show(saidasfinanceiras) {
             <td scope="row">${saidasfinanceiro.saidaPag_id}</td>
             <td>${saidasfinanceiro.fornecedor.nome}</td>
             <td>${saidasfinanceiro.descricao}</td>
-            <td>${saidasfinanceiro.valor}</td>
+            <td>${Math.round(saidasfinanceiro.valor).toFixed(2)}</td>
             <td>${formatter.format(saidasfinanceiro.data_operacao)}</td> 
             <td>${saidasfinanceiro.nota_fiscal}</td>
             <td>${saidasfinanceiro.parcelamento}</td>
@@ -40,6 +40,24 @@ function show(saidasfinanceiras) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGAR O TOTAL DE SAIDAS FINANCEIRAS
+function total(saidasfinanceiras) {
+
+    let tab = "";
+    let total = 0;
+    for (let financeirosaida of saidasfinanceiras) {
+        total = total + financeirosaida.valor;
+    }
+
+    tab +=
+    `
+         <td colspan="3" style="text-align: right;">Total: </td>
+         <td colspan="2"style="text-align: left;">R$ ${Math.round(total).toFixed(2)}</td>
+         <td></td>
+        `;
+    document.getElementById("foot-tabela").innerHTML = tab;
+}
+
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
@@ -48,6 +66,7 @@ async function getAPI(url) {
     
     if (response) {
         show(data);
+        total(data);
     }
 }
 

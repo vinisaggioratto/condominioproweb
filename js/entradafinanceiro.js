@@ -29,14 +29,35 @@ function show(financeiroentradas) {
             <td scope="row">${financeiroentrada.recebCond_id}</td>
             <td>${financeiroentrada.condomino.nome}</td>
             <td>${financeiroentrada.descricao}</td>
-            <td>${financeiroentrada.valor}</td>
+            <td>${Math.round(financeiroentrada.valor).toFixed(2)}</td>
             <td>${formatter.format(financeiroentrada.data_operacao)}</td> 
             <td>${financeiroentrada.parcelamento}</td>
+
         </tr>
+
+        
         `;
     }
 
     document.getElementById("bodytabela").innerHTML = tab;
+}
+
+//CARREGAR O TOTAL DE ENTRADAS FINANCEIRAS
+function total(financeiroentradas) {
+
+    let tab = "";
+    let total = 0;
+    for (let financeiroentrada of financeiroentradas) {
+        total = total + financeiroentrada.valor;
+    }
+
+    tab +=
+    `
+    <td colspan="3" style="text-align: right;">Total: </td>
+    <td colspan="2"style="text-align: left;">R$ ${Math.round(total).toFixed(2)}</td>
+    <td></td>
+        `;
+    document.getElementById("foot-tabela").innerHTML = tab;
 }
 
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
@@ -44,9 +65,10 @@ async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    
+
     if (response) {
         show(data);
+        total(data);
     }
 }
 

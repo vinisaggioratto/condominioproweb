@@ -30,7 +30,7 @@ function show(manutencoes) {
             <td scope="row">${manutencao.manutencao_id}</td>
             <td>${manutencao.manutencao_nome}</td>
             <td>${manutencao.manutencao_descricao}</td>
-            <td>${manutencao.valor}</td>
+            <td>${Math.round(manutencao.valor).toFixed(2)}</td>
             <td>${formatter.format(manutencao.data_inicial)}</td> 
             <td>${formatter.format(manutencao.data_final)}</td> 
             <td>${manutencao.fornecedor.nome}</td>
@@ -41,6 +41,24 @@ function show(manutencoes) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGAR O TOTAL DE ENTRADAS FINANCEIRAS
+function total(manutencoes) {
+
+    let tab = "";
+    let total = 0;
+    for (let manutencao of manutencoes) {
+        total = total + manutencao.valor;
+    }
+
+    tab +=
+    `
+    <td colspan="3" style="text-align: right;">Total: </td>
+    <td colspan="2"style="text-align: left;">R$ ${Math.round(total).toFixed(2)}</td>
+    <td></td>
+        `;
+    document.getElementById("foot-tabela").innerHTML = tab;
+}
+
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
@@ -49,6 +67,7 @@ async function getAPI(url) {
     
     if (response) {
         show(data);
+        total(data);
     }
 }
 
