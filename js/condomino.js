@@ -21,7 +21,7 @@ function show(condominos) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${condomino.condomino_id}</td>
+            <td scope="row">${condomino.id}</td>
             <td>${condomino.nome}</td>
             <td>${condomino.cpf}</td>
             <td>${condomino.rg}</td>
