@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/licencas";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(licencas) {
     let tab =
         `
@@ -23,7 +23,7 @@ function show(licencas) {
         const date = new Date();
         const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
         const formattedDate = formatter.format(date);
-        console.log(formattedDate);
+
         tab +=
             `
 
@@ -43,11 +43,11 @@ function show(licencas) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
     
     if (response) {
         show(data);
@@ -56,7 +56,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
-
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("nome").value = "";
@@ -69,6 +69,7 @@ function limparCampos() {
     document.getElementById('btn-cadastrar').textContent = 'Cadastrar';
 }
 
+//FORMATAR DATA BÁSICO
 function formatarData(datas) {
 
     const data = new Date(datas.split('/').reverse().join('-'));
@@ -78,7 +79,7 @@ function formatarData(datas) {
     return dataFormatada = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate()));
 }
 
-//NOVO FORMATADOR DE DATAS PADRÃO AMERICANO:
+//FORMATADOR DE DATAS PADRÃO AMERICANO QUE EXIBE OS NUMEROS 0 - COMPLEMENTA O formatarData:
 function formatDataUs(stringData) {
     const partes_data = stringData.split("-");
     let dia = partes_data[2].padStart(2, "0");
@@ -107,7 +108,6 @@ function preencherFormulario(linha) {
     const date = new Date();
     const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
     const formattedDate = formatter.format(date);
-    console.log(formattedDate);
 
     document.getElementById('id').value = id;
     document.getElementById('nome').value = nome;
@@ -130,9 +130,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const data_emissao = formatDataUs(document.getElementById("data_emissao").value);
     const data_validade = formatDataUs(document.getElementById("data_validade").value);
     const valido = document.getElementById("valido").value;
-
-    console.log("Dados para envio:")
-    console.log("-----");
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
@@ -200,7 +197,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-//DELETAR
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -211,8 +208,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

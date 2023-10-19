@@ -1,5 +1,6 @@
 const url = "http://localhost:8080/cidades";
 
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(cidades) {
     let tab =
         `
@@ -26,11 +27,11 @@ function show(cidades) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
     
     if (response) {
         show(data);
@@ -39,6 +40,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("nome").value = "";
@@ -52,48 +54,17 @@ function preencherFormulario(linha) {
     const cidade = linha.cells[1].textContent;
     var estado = linha.cells[2].textContent;
 
-
-    console.log(id);
     document.getElementById('id').value = id;
     document.getElementById('nome').value = cidade;
     document.getElementById('estado_nome').value = estado;
     document.getElementById('btn-cadastrar').textContent = 'Atualizar';
-    //teste();
 }
 
-
-/*
-//PEGAR O ID DO ESTADO
-function teste(){
-    const url1 = "http://localhost:8080/estados";
-    
-    async function pegarEstado(url) {
-        const response = await fetch(url, { method: "GET" });
-    
-        let data = await response.json();
-    
-        let valor = document.getElementById("estado_nome").value;
-    
-        for (let estado of data) {
-            let estadoNome = estado.nome;
-            if(estadoNome == valor){
-                let estadoId = estado.estado_id;
-                console.log("Nome correspondente: " + estadoNome + " - ID: " + estadoId)
-                document.getElementById("idestado").value = estadoId;
-            } 
-        }
-    }
-    pegarEstado(url1);
-    }
-*/
-
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO 
-//ESTÁ COM ERRO NÃO CADASTRA NEM ALTERA
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
     const estado = document.getElementById("estado_nome").value;
-    console.log("ID - " + id)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
@@ -150,9 +121,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-
-//EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
-    //FUNCIONANDO
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -163,8 +132,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

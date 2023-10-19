@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/condomino";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(condominos) {
     let tab =
         `
@@ -35,11 +35,11 @@ function show(condominos) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
     
     if (response) {
         show(data);
@@ -48,7 +48,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
-
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("nome").value = "";
@@ -95,18 +95,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const proprietario = document.getElementById("proprietario").value;
     const morador = document.getElementById("morador").value;
 
-
-    console.log("Dados para envio:")
-    console.log("-----");
-    console.log("ID ATUALIZADO: " + id);
-    console.log("NOME ATUALIZADO: " + nome);
-    console.log("CPF ATUALIZADO: " + cpf);
-    console.log("RG ATUALIZADO: " + rg);
-    console.log("TELEFONE ATUALIZADO: " + telefone_celular);
-    console.log("PROPRIETARIO ATUALIZADO: " + proprietario);
-    console.log("MORADOR ATUALIZADO: " + morador);
-    console.log("-----");
-
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
@@ -131,26 +119,10 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Condômino atualizado com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + cpf);
-                console.log("RG ATUALIZADO: " + rg);
-                console.log("TELEFONE ATUALIZADO: " + telefone_celular);
-                console.log("PROPRIETARIO ATUALIZADO: " + proprietario);
-                console.log("MORADOR ATUALIZADO: " + morador);
-                console.log("-----");
+
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + cpf);
-                console.log("RG ATUALIZADO: " + rg);
-                console.log("TELEFONE ATUALIZADO: " + telefone_celular);
-                console.log("PROPRIETARIO ATUALIZADO: " + proprietario);
-                console.log("MORADOR ATUALIZADO: " + morador);
-                console.log("-----");
+
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
@@ -187,7 +159,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-//DELETAR
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -198,8 +170,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

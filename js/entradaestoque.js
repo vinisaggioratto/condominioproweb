@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/entradaestoque";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(entradasestoque) {
     let tab =
         `
@@ -22,7 +22,7 @@ function show(entradasestoque) {
         const date = new Date();
         const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
         const formattedDate = formatter.format(date);
-        console.log(formattedDate);
+
         tab +=
             `
 
@@ -41,11 +41,11 @@ function show(entradasestoque) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
     
     if (response) {
         show(data);
@@ -54,7 +54,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
-
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("select_item_estoque").value = "";
@@ -66,17 +66,17 @@ function limparCampos() {
     document.getElementById('btn-cadastrar').textContent = 'Cadastrar'
 }
 
+//FORMATAR DATA BÁSICO
 function formatarData(datas) {
 
     const data = new Date(datas.split('/').reverse().join('-'));
     const dataAmericana = data.toLocaleDateString('en-US');
 
     let data1 = new Date(dataAmericana);
-    //let dataFormatada = "";
     return dataFormatada = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate()));
 }
 
-//NOVO FORMATADOR DE DATAS PADRÃO AMERICANO:
+//FORMATADOR DE DATAS PADRÃO AMERICANO QUE EXIBE OS NUMEROS 0 - COMPLEMENTA O formatarData:
 function formatDataUs(stringData) {
     const partes_data = stringData.split("-");
     let dia = partes_data[2].padStart(2, "0");
@@ -124,17 +124,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const valor_unitario = document.getElementById("valor_unitario").value;
     const data_entrada = formatDataUs(document.getElementById("data_entrada").value);
     const fornecedor = document.getElementById("select_fornecedor").value;
-        
-    console.log("Dados para envio:")
-    console.log("-----");
-    console.log("ID ATUALIZADO: " + id);
-    console.log("ITEM ATUALIZADO: " + itemEstoque);
-    console.log("NOME ATUALIZADO: " + nome);
-    console.log("QUANTIDADE ATUALIZADO: " + quantidade);
-    console.log("VALOR UNITÁRIO ATUALIZADO: " + valor_unitario);
-    console.log("DATA ENTRADA ATUALIZADO: " + data_entrada);
-    console.log("FORNECEDOR ATUALIZADO: " + fornecedor);
-    console.log("-----");
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
         const data = {
@@ -159,26 +148,10 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Entrada de estoque atualizada com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("ITEM ATUALIZADO: " + itemEstoque);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("QUANTIDADE ATUALIZADO: " + quantidade);
-                console.log("VALOR UNITÁRIO ATUALIZADO: " + valor_unitario);
-                console.log("DATA ENTRADA ATUALIZADO: " + data_entrada);
-                console.log("FORNECEDOR ATUALIZADO: " + fornecedor);
-                console.log("-----");
+
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("ITEM ATUALIZADO: " + itemEstoque);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("QUANTIDADE ATUALIZADO: " + quantidade);
-                console.log("VALOR UNITÁRIO ATUALIZADO: " + valor_unitario);
-                console.log("DATA ENTRADA ATUALIZADO: " + data_entrada);
-                console.log("FORNECEDOR ATUALIZADO: " + fornecedor);
-                console.log("-----");
+
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
@@ -215,7 +188,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-//DELETAR
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -226,8 +199,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

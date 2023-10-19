@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/tipodependentes";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(tipodependentes) {
     let tab =
         `
@@ -26,11 +26,11 @@ function show(tipodependentes) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
     
     if (response) {
         show(data);
@@ -39,7 +39,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
-
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("descricao").value = "";
@@ -61,12 +61,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const descricao = document.getElementById("descricao").value;
 
-    console.log("Dados para envio:")
-    console.log("-----");
-    console.log("ID ATUALIZADO: " + id);
-    console.log("DESCRIÇÃO ATUALIZADO: " + descricao);
-    console.log("-----");
-
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
@@ -86,24 +80,10 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Tipo de dependente atualizado com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("DESCRIÇÃO ATUALIZADO: " + descricao);
-                console.log("-----");
+
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + cpf_cnpj);
-                console.log("TELEFONE ATUALIZADO: " + telefone_celular);
-                console.log("ESP. ATUALIZADO: " + especialidade);
-                console.log("RUA ATUALIZADO: " + rua);
-                console.log("BAIRRO ATUALIZADO: " + bairro);
-                console.log("NUMERO ATUALIZADO: " + numero);
-                console.log("CIDADE ATUALIZADO: " + cidade);
-                console.log("ESTADO ATUALIZADO: " + estado);
-                console.log("-----");
+
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
@@ -135,7 +115,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-//DELETAR
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -146,8 +126,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

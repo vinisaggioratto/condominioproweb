@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/sindico";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(sindicos) {
     let tab =
         `
@@ -17,12 +17,11 @@ function show(sindicos) {
     `;
 
     for (let sindico of sindicos) {
-        /**/
         const date = new Date();
         const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
         const formattedDate = formatter.format(date);
-        console.log(formattedDate);
-        let teste = sindico.nome;  
+
+        let nome = sindico.nome;  
         let data_i = formatter.format(sindico.data_inicial);
         let data_fp = formatter.format(sindico.data_final_prevista);
         let data_f = formatter.format(sindico.data_final);
@@ -31,7 +30,7 @@ function show(sindicos) {
             `
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${sindico.sindico_id}</td>
-            <td>${teste}</td>
+            <td>${nome}</td>
             <td>${data_i}</td>
             <td>${data_fp}</td>
             <td>${data_f}</td>
@@ -42,11 +41,11 @@ function show(sindicos) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
 
     if (response) {
         show(data);
@@ -55,7 +54,7 @@ async function getAPI(url) {
 
 getAPI(url);
 
-//
+//LIMPAR OS CAMPOS
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("select-condomino").value = "";
@@ -66,27 +65,17 @@ function limparCampos() {
     document.getElementById('btn-cadastrar').textContent = 'Cadastrar';
 }
 
-//converte para o padrão americano funcionando
-/**/
-
-/*PESQUISAR A BIBLIOTECA MOMENT.JS 
-
-VAI MOSTRAR A DATA COM O FUSOHORARIO CORRETO.
-const data = moment(data_inicial, 'DD/MM/YYYY').utcOffset('-03:00');
-const dataAmericana = data.format('YYYY-MM-DD');
-
-*/
+//FORMATAR DATA BÁSICO
 function formatarData(datas) {
 
     const data = new Date(datas.split('/').reverse().join('-'));
     const dataAmericana = data.toLocaleDateString('en-US');
 
     let data1 = new Date(dataAmericana);
-    //let dataFormatada = "";
     return dataFormatada = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate()));
 }
 
-//NOVO FORMATADOR DE DATAS PADRÃO AMERICANO:
+//FORMATADOR DE DATAS PADRÃO AMERICANO QUE EXIBE OS NUMEROS 0 - COMPLEMENTA O formatarData:
 function formatDataUs(stringData) {
     const partes_data = stringData.split("-");
     let dia = partes_data[2].padStart(2, "0");
@@ -110,13 +99,9 @@ function preencherFormulario(linha) {
     const data_final = linha.cells[4].textContent;
     const select_cadastro = linha.cells[5].textContent;
 
-    console.log("Data inicial valor original: " + data_inicial);
-
     const date = new Date();
     const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
     const formattedDate = formatter.format(date);
-    console.log(formattedDate);
-
 
     document.getElementById('id').value = id;
     document.getElementById('select-condomino').value = condomino;
@@ -135,17 +120,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const data_final_prevista = formatDataUs(document.getElementById("data_final_prevista").value);
     const data_final = formatDataUs(document.getElementById("data_final").value);
     const ativo = document.getElementById("select_cadastro2").value;
-
-    console.log("Dados para envio:")
-    console.log("-----");
-    console.log("ID ATUALIZADO: " + id);
-    console.log("NOME ATUALIZADO: " + condomino_nome);
-    console.log("CPF ATUALIZADO: " + data_inicial);
-    console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
-    console.log("ESP. ATUALIZADO: " + data_final);
-    console.log("RUA ATUALIZADO: " + ativo);
-
-    console.log("-----");
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
@@ -171,26 +145,10 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Síndico atualizado com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + data_inicial);
-                console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
-                console.log("ESP. ATUALIZADO: " + data_final);
-                console.log("RUA ATUALIZADO: " + ativo);
 
-                console.log("-----");
             } else {
                 alert("Erro ao atualizar os dados.");
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("CPF ATUALIZADO: " + data_inicial);
-                console.log("TELEFONE ATUALIZADO: " + data_final_prevista);
-                console.log("ESP. ATUALIZADO: " + data_final);
-                console.log("RUA ATUALIZADO: " + ativo);
 
-                console.log("-----");
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
@@ -226,7 +184,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     }
 });
 
-//DELETAR
+//DELETAR OS DADOS SELECIONADOS
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     //EXIBE UM ALERTA PEDINDO CONFIRMAÇÃO PARA EXCLUIR OS DADOS.
@@ -237,8 +195,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

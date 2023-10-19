@@ -32,11 +32,11 @@ function show(apartamentos) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
 
     if (response) {
         show(data);
@@ -81,8 +81,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
-        console.log("ID PREENCHIDO")
-
         const data = {
             numero,
             andar,
@@ -109,7 +107,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             console.error("Erro na requisição:", error);
         }
 
-    } else { //ENVIA OS DADOS DO FORMULÁRIO PARA CADASTRO
+    } else { //ENVIA OS DADOS DO FORMULÁRIO PARA FAZER UM NOVO CADASTRO
         const data = {
             numero,
             andar,
@@ -148,8 +146,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO")
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

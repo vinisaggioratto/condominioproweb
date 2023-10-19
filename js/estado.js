@@ -1,7 +1,6 @@
 const url = "http://localhost:8080/estados";
 
-let id_pais = 0;
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(estados) {
     let tab =
         `
@@ -28,11 +27,11 @@ function show(estados) {
     document.getElementById("bodytabela").innerHTML = tab;
 }
 
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     var data = await response.json();
-    console.log(data);
 
     if (response) {
         show(data);
@@ -40,31 +39,6 @@ async function getAPI(url) {
 }
 
 getAPI(url);
-
-//PEGAR O ID DO PAIS
-/*
-function teste(){
-const url22 = "http://localhost:8080/pais";
-
-async function pegarPais(url) {
-    const response = await fetch(url, { method: "GET" });
-
-    var data1 = await response.json();
-
-    let valor = document.getElementById("pais_nome").value;
-
-    for (let pais of data1) {
-        let paisNome = pais.nome;
-        if(paisNome == valor){
-            let paisId = pais.pais_id;
-            console.log("Nome correspondente: " + paisNome + " - ID: " + paisId)
-            document.getElementById("texto_oculto").value = paisId;
-        }
-
-    }
-}
-pegarPais(url22);
-}*/
 
 //LIMPAR CAMPOS
 function limparCampos() {
@@ -91,7 +65,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
     const pais = document.getElementById("pais_nome").value;
-    console.log("ID - " + id)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
@@ -113,11 +86,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             if (response.ok) {
                 alert("Estado atualizado com sucesso!");
                 getAPI(url);
-                console.log("-----");
-                console.log("ID ATUALIZADO: " + id);
-                console.log("NOME ATUALIZADO: " + nome);
-                console.log("PAIS ATUALIZADO: " + pais);
-                console.log("-----");
+
             } else {
                 alert("Erro ao atualizar os dados.");
             }
@@ -162,8 +131,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
 
         try {
             const id = document.getElementById("id").value;
-            console.log(id);
-            console.log("ID PREENCHIDO");
 
             const response = await fetch(url + "/" + id, {
                 method: "DELETE",

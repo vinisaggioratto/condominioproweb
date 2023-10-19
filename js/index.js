@@ -20,7 +20,7 @@ function validarLogin(){
         myModal.show();
     }
 }
-
+//ARMAZENA O USUARIO INFORMADO NO LOGIN PARA SER EXIBIDO NA TELA PRINCIPAL
 function armazenarUsuario() {
     var inputLogin = document.getElementById("usuario").value;
     localStorage.setItem("valor", inputLogin);

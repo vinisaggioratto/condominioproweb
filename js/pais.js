@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/pais";
 
-
+//PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(pais) {
     let tab =
         `
@@ -24,12 +24,12 @@ function show(pais) {
 
     document.getElementById("bodytabela").innerHTML = tab;
 }
-//const data = "";
+
+//CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
 
     data = await response.json();
-    console.log(data);
 
     if (response) {
         show(data);
@@ -59,7 +59,6 @@ function preencherFormulario(linha) {
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
-    console.log("ID - " + id)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
@@ -124,8 +123,7 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
     
             try {
                 const id = document.getElementById("id").value;
-                console.log(id);
-                console.log("ID PREENCHIDO")
+
     
                 const response = await fetch(url + "/" + id, {
                     method: "DELETE",
