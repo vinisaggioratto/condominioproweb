@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/login";
+const url = "http://localhost:8080/usuario";
 
 //PEGAR OS DADOS DO DB E MOSTRAR NA TABELA INICIAL
 function show(usuarios) {
@@ -8,6 +8,7 @@ function show(usuarios) {
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Usuário</th>
+            <th scope="col">Regra</th>
         </tr>
     </thead>
     `;
@@ -16,8 +17,9 @@ function show(usuarios) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${usuario.login_id}</td>
+            <td scope="row">${usuario.id}</td>
             <td>${usuario.usuario}</td>
+            <td>${usuario.role}</td>
         </tr>
         `;
     }
