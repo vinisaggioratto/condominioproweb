@@ -28,7 +28,7 @@ function show(licencas) {
             `
 
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${licenca.licenca_id}</td>
+            <td scope="row">${licenca.id}</td>
             <td>${licenca.nome}</td>
             <td>${licenca.descricao}</td>
             <td>${licenca.numero}</td>

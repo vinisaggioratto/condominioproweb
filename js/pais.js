@@ -16,7 +16,7 @@ function show(pais) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${p.pais_id}</td>
+            <td scope="row">${p.id}</td>
             <td>${p.nome}</td>
         </tr>
         `;

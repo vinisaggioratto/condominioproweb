@@ -8,7 +8,7 @@ function show(usuarios) {
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Usuário</th>
-            <th scope="col">Regra</th>
+            <th scope="col">Perfil</th>
         </tr>
     </thead>
     `;
@@ -18,8 +18,8 @@ function show(usuarios) {
             `
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${usuario.id}</td>
-            <td>${usuario.usuario}</td>
-            <td>${usuario.role}</td>
+            <td>${usuario.login}</td>
+            <td>${usuario.perfil}</td>
         </tr>
         `;
     }
@@ -44,7 +44,10 @@ getAPI(url);
 function limparCampos() {
     document.getElementById("id").value = "";
     document.getElementById("usuario").value = "";
+    var inputusuario = document.querySelector('#usuario');
+    inputusuario.disabled = false;
     document.getElementById("senha").value = "";
+    document.getElementById("select_perfil").value = "";
     document.getElementById('btn-cadastrar').textContent = 'Cadastrar';
 }
 
@@ -52,24 +55,31 @@ function limparCampos() {
 function preencherFormulario(linha) {
     const id = linha.cells[0].textContent;
     const usuario = linha.cells[1].textContent;
+    const perfil = linha.cells[2].textContent;
 
     document.getElementById('id').value = id;
     document.getElementById('usuario').value = usuario;
+    var inputusuario = document.querySelector('#usuario');
+    inputusuario.disabled = true;
+    document.getElementById("senha").value = "";
+    document.getElementById('select_perfil').value = perfil;
     document.getElementById('btn-cadastrar').textContent = 'Atualizar';
 }
 
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO 
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
-    const usuario = document.getElementById("usuario").value;
-    const senha = document.getElementById("senha").value;
+    const login = document.getElementById("usuario").value;
+    const password = document.getElementById("senha").value;
+    const perfil = document.getElementById("select_perfil").value;
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
             id,
-            usuario,
-            senha
+            login,
+            password,
+            perfil
         };
 
         try {
@@ -93,8 +103,9 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
 
     } else { //ENVIA OS DADOS DO FORMULÁRIO PARA CADASTRO
         const data = {
-            usuario,
-            senha
+            login,
+            password,
+            perfil
         };
 
         try {
@@ -142,7 +153,7 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
                 alert("Usuário deletado com sucesso!");
                 getAPI(url);
             } else {
-                alert("Erro ao deletar cidade. Confira se não existe vínculo.");
+                alert("Erro ao deletar usuário. Confira se não existe vínculo.");
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
