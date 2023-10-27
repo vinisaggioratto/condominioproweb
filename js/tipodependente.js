@@ -17,7 +17,7 @@ function show(tipodependentes) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${tipodependente.tipoDepend_id}</td>
+            <td scope="row">${tipodependente.id}</td>
             <td>${tipodependente.descricao}</td>
         </tr>
         `;

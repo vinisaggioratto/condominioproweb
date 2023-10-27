@@ -20,7 +20,7 @@ function show(apartamentos) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${apartamento.apartamento_id}</td>
+            <td scope="row">${apartamento.id}</td>
             <td>${apartamento.numero}</td>
             <td>${apartamento.andar}</td>
             <td>${apartamento.bloco}</td>

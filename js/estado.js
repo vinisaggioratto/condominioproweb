@@ -17,7 +17,7 @@ function show(estados) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${estado.estado_id}</td>
+            <td scope="row">${estado.id}</td>
             <td>${estado.nome}</td>
             <td>${estado.pais.nome}</td>
         </tr>
@@ -65,6 +65,8 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
     const pais = document.getElementById("pais_nome").value;
+
+    console.log(id, nome, pais, url)
 
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 

@@ -27,9 +27,9 @@ function show(manutencoes) {
             `
 
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${manutencao.manutencao_id}</td>
-            <td>${manutencao.manutencao_nome}</td>
-            <td>${manutencao.manutencao_descricao}</td>
+            <td scope="row">${manutencao.id}</td>
+            <td>${manutencao.nome}</td>
+            <td>${manutencao.descricao}</td>
             <td>${Math.round(manutencao.valor).toFixed(2)}</td>
             <td>${formatter.format(manutencao.data_inicial)}</td> 
             <td>${formatter.format(manutencao.data_final)}</td> 
@@ -137,8 +137,8 @@ function preencherFormulario(linha) {
 //ENVIAR OS DADOS DO FORMULÁRIO PARA CADASTRO
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     const id = document.getElementById("id").value;
-    const manutencao_nome = document.getElementById("manutencao_nome").value;
-    const manutencao_descricao = document.getElementById("manutencao_descricao").value;
+    const nome = document.getElementById("manutencao_nome").value;
+    const descricao = document.getElementById("manutencao_descricao").value;
     const valor = document.getElementById("valor").value;
     const data_inicial = formatDataUs(document.getElementById("data_inicial").value);
     const data_final = formatDataUs(document.getElementById("data_final").value);
@@ -147,8 +147,8 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
-            manutencao_nome,
-            manutencao_descricao,
+            nome,
+            descricao,
             valor,
             data_inicial,
             data_final,
@@ -178,8 +178,8 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
 
     } else { //ENVIA OS DADOS DO FORMULÁRIO PARA CADASTRO
         const data = {
-            manutencao_nome,
-            manutencao_descricao,
+            nome,
+            descricao,
             valor,
             data_inicial,
             data_final,

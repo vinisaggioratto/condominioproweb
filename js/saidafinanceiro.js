@@ -26,7 +26,7 @@ function show(saidasfinanceiras) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${saidasfinanceiro.saidaPag_id}</td>
+            <td scope="row">${saidasfinanceiro.id}</td>
             <td>${saidasfinanceiro.fornecedor.nome}</td>
             <td>${saidasfinanceiro.descricao}</td>
             <td>${Math.round(saidasfinanceiro.valor).toFixed(2)}</td>

@@ -22,7 +22,7 @@ function show(dependentes) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${dependente.dependente_id}</td>
+            <td scope="row">${dependente.id}</td>
             <td>${dependente.nome}</td>
             <td>${dependente.cpf}</td>
             <td>${dependente.rg}</td>

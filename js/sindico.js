@@ -21,19 +21,14 @@ function show(sindicos) {
         const formatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' });
         const formattedDate = formatter.format(date);
 
-        let nome = sindico.nome;  
-        let data_i = formatter.format(sindico.data_inicial);
-        let data_fp = formatter.format(sindico.data_final_prevista);
-        let data_f = formatter.format(sindico.data_final);
-
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${sindico.sindico_id}</td>
-            <td>${nome}</td>
-            <td>${data_i}</td>
-            <td>${data_fp}</td>
-            <td>${data_f}</td>
+            <td scope="row">${sindico.id}</td>
+            <td>${sindico.nome}</td>
+            <td>${formatter.format(sindico.data_inicial)}</td>
+            <td>${formatter.format(sindico.data_final_prevista)}</td>
+            <td>${formatter.format(sindico.data_final)}</td>
             <td>${sindico.ativo}</td>
         </tr>
         `;

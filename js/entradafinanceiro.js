@@ -26,7 +26,7 @@ function show(financeiroentradas) {
             `
 
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${financeiroentrada.recebCond_id}</td>
+            <td scope="row">${financeiroentrada.id}</td>
             <td>${financeiroentrada.condomino.nome}</td>
             <td>${financeiroentrada.descricao}</td>
             <td>${Math.round(financeiroentrada.valor).toFixed(2)}</td>

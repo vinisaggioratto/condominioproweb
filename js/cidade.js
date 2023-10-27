@@ -17,7 +17,7 @@ function show(cidades) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${cidade.cidade_id}</td>
+            <td scope="row">${cidade.id}</td>
             <td>${cidade.nome}</td>
             <td>${cidade.estado.nome}</td>
         </tr>

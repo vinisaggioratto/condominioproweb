@@ -24,7 +24,7 @@ function show(fornecedores) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${fornecedor.fornecedor_id}</td>
+            <td scope="row">${fornecedor.id}</td>
             <td>${fornecedor.nome}</td>
             <td>${fornecedor.cpf_cnpj}</td>
             <td>${fornecedor.telefone_celular}</td>
