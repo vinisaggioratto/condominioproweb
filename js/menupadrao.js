@@ -70,20 +70,22 @@ document.write(`
                                 <ul class="submenu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Endereço &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Cidade</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Estado</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">País</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html">Cidade</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html" 
+                                                carregarRelatorioEstado(url2)>Estado</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html" 
+                                                onclick="carregarRelatorioPais(url1)">País</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Apartamentos </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Usuários </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Fornecedores </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Apartamentos </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Usuários </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Fornecedores </a></li>
                                     <li><a class="dropdown-item" href="#">Pessoas &raquo; </a>
                                         <ul class="submenu dropdown-menu">
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Condôminos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Dependentes</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Síndicos</a></li>
-                                            <li><a class="dropdown-item" href="relatorios/relatorio.html">Tipo de dependentes</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html">Condôminos</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html">Dependentes</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html">Síndicos</a></li>
+                                            <li><a class="dropdown-item" href="relatorio.html">Tipo de dependentes</a></li>
                                         </ul>
                                     </li>
                                     <li><a class="dropdown-item" href="#"> Veículos </a></li>
@@ -91,28 +93,28 @@ document.write(`
                             </li>
                             <li><a class="dropdown-item" href="#"> Financeiro &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Entradas </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Saídas </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Entradas </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Saídas </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Manutenções &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Manutenções </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Manutenções </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Síndico &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Licenças </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Avisos </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Ocorrências </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Condômino/Apartamento </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Licenças </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Avisos </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Ocorrências </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Condômino/Apartamento </a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#"> Estoque &raquo; </a>
                                 <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Entrada </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Saída </a></li>
-                                    <li><a class="dropdown-item" href="relatorios/relatorio.html"> Itens </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Entrada </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Saída </a></li>
+                                    <li><a class="dropdown-item" href="relatorio.html"> Itens </a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -128,5 +130,5 @@ document.write(`
             </div>
         </div> 
     </nav>
-
-`);
+`
+);
