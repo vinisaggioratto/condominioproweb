@@ -32,7 +32,6 @@ function show(financeiroentradas) {
             <td>${Math.round(financeiroentrada.valor).toFixed(2)}</td>
             <td>${formatter.format(financeiroentrada.data_operacao)}</td> 
             <td>${financeiroentrada.parcelamento}</td>
-
         </tr>
 
         

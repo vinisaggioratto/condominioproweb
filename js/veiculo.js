@@ -21,7 +21,7 @@ function show(veiculos) {
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
-            <td scope="row">${veiculo.veiculo_id}</td>
+            <td scope="row">${veiculo.id}</td>
             <td>${veiculo.placa}</td>
             <td>${veiculo.marca}</td>
             <td>${veiculo.cor}</td>

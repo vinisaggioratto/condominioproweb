@@ -15,6 +15,7 @@ function show(pais) {
     for (let p of pais) {
         tab +=
             `
+            
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${p.id}</td>
             <td>${p.nome}</td>
