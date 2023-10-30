@@ -6,7 +6,6 @@ function validarLogin(){
     let senha = document.getElementById('senha').value;
     if(usuarioTeste == usuario && senhaTeste == senha){
         window.location.href = 'telaprincipal.html';
-        armazenarUsuario();
         document.getElementById("usuario").value = "";
         document.getElementById("senha").value = "";
     }
@@ -32,17 +31,14 @@ document.getElementById("btn-login").addEventListener("click", async () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-                
             });
-            console.log(login, password);
             const json = await response.json();
             if (json) {
-                console.log(json);
                 alert("Usuário validado com sucesso!");
                 window.location.href = "telaprincipal.html";
             } else {
-                console.log(json);
-                alert("Erro ao validar os dados.");
+                const myModal = new bootstrap.Modal('#modal-login', { }); 
+                myModal.show();
             }
         } catch (error) {
             console.error("Erro na requisição:", error);
