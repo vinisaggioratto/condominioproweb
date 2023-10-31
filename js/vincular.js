@@ -23,7 +23,6 @@ function show(vincular) {
 
         tab +=
             `
-
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${vinc.id}</td>
             <td>${vinc.condomino.nome}</td>
@@ -40,7 +39,6 @@ function show(vincular) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
     
     if (response) {

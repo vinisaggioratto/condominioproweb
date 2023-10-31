@@ -25,7 +25,6 @@ function show(entradasestoque) {
 
         tab +=
             `
-
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${entradaestoque.id}</td>
             <td>${entradaestoque.itemEstoque.descricao}</td>
@@ -44,7 +43,6 @@ function show(entradasestoque) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
     
     if (response) {

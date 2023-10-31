@@ -44,7 +44,6 @@ function show(fornecedores) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
     
     if (response) {

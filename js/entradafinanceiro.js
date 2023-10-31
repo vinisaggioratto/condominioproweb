@@ -24,7 +24,6 @@ function show(financeiroentradas) {
 
         tab +=
             `
-
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${financeiroentrada.id}</td>
             <td>${financeiroentrada.condomino.nome}</td>
@@ -33,8 +32,6 @@ function show(financeiroentradas) {
             <td>${formatter.format(financeiroentrada.data_operacao)}</td> 
             <td>${financeiroentrada.parcelamento}</td>
         </tr>
-
-        
         `;
     }
 
@@ -62,7 +59,6 @@ function total(financeiroentradas) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
 
     if (response) {
@@ -139,14 +135,12 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
     if (id > 0) { //ENVIA PARA ATUALIZAR OS DADOS SE O ID FOR MAIOR QUE 0
 
         const data = {
-
             condomino,
             descricao,
             valor,
             data_operacao,
             parcelamento,
             id
-
         };
 
         try {

@@ -23,7 +23,6 @@ function show(ocorrencias) {
         const formattedDate = formatter.format(date);
         tab +=
             `
-
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${ocorrencia.id}</td>
             <td>${ocorrencia.nome}</td>
@@ -41,7 +40,6 @@ function show(ocorrencias) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
     
     if (response) {

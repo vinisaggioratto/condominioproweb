@@ -39,7 +39,6 @@ function show(sindicos) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
 
     if (response) {
@@ -125,7 +124,6 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
             data_final_prevista,
             data_inicial,
             id
-
         };
 
         try {

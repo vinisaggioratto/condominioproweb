@@ -13,7 +13,6 @@ function show(tipodependentes) {
     `;
 
     for (let tipodependente of tipodependentes) {
-
         tab +=
             `
         <tr onclick="preencherFormulario(this)">
@@ -29,7 +28,6 @@ function show(tipodependentes) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     var data = await response.json();
     
     if (response) {
@@ -133,7 +131,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
                     "Content-Type": "application/json"
                 },
             })
-
             if (response.ok) {
                 alert("Tipo de dependente deletado com sucesso!");
                 getAPI(url);

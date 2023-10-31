@@ -1,3 +1,0 @@
-icone editar: https://icons.getbootstrap.com/icons/pencil-square/
-icone excluir: https://icons.getbootstrap.com/icons/trash3-fill/
-icone question: https://icons.getbootstrap.com/icons/question-circle/

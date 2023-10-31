@@ -8,7 +8,7 @@ const url7 = "http://localhost:8080/sindico";
 const url8 = "http://localhost:8080/apartamentos";
 const url9 = "http://localhost:8080/itensestoque";
 
-
+//VERIFICA SE O ELEMENTO EXISTE NA PÁGINA, SE EXISTIR, CHAMA A getAPI CORRESPONDENTE
 if (document.getElementById("select-condomino")) {
     getAPI1(url1);
 }
@@ -37,6 +37,7 @@ if (document.getElementById("select_item_estoque")) {
     getAPI9(url9);
 }
 
+//FUNÇÕES
 
 function getAPI1(url) {
     const response = fetch(url, { method: "GET" });

@@ -15,7 +15,6 @@ function show(pais) {
     for (let p of pais) {
         tab +=
             `
-            
         <tr onclick="preencherFormulario(this)">
             <td scope="row">${p.id}</td>
             <td>${p.nome}</td>
@@ -29,7 +28,6 @@ function show(pais) {
 //CARREGA OS DADOS DO BACKEND E DISPONIBILIZA PARA SER EXIBIDO NA TABELA
 async function getAPI(url) {
     const response = await fetch(url, { method: "GET" });
-
     data = await response.json();
 
     if (response) {
@@ -124,7 +122,6 @@ document.getElementById("btn-excluir").addEventListener("click", async () => {
     
             try {
                 const id = document.getElementById("id").value;
-
     
                 const response = await fetch(url + "/" + id, {
                     method: "DELETE",
