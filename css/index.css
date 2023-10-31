@@ -94,13 +94,42 @@ form input {
 
 
 /*MEDIA QUERYS*/
-@media (max-width: 316px) {
-    #title-navbar {
-        text-align: center;
-    }
-}
 
-@media (max-width: 577px) {
+@media (max-width: 316px){
+    #title-navbar {
+        visibility: hidden;
+    }
+
+    #usuarioOnline{
+        visibility: hidden;
+    }
+
+    #container-navbar{
+        height: 17em;
+    }
+
+    #container-navbar {
+        flex-direction: column;
+    }
+
+    #container-login {
+        margin-top: 20em;
+        height: 16em;
+    }
+    #img-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0 1em 0;
+    }
+
+}
+/*452px*/
+@media (min-width: 316px) and (max-width: 577px) {
+    #container-navbar{
+        height: 17em;
+    }
+
     #container-navbar {
         flex-direction: column;
     }
@@ -136,10 +165,16 @@ form input {
         align-items: center;
         margin: 1em 0;
     }
-
 }
 
 @media (min-width: 577px) and (max-width: 799.99px) {
+
+    #menu-config {
+        margin-top: 100px;
+        height: 50px;
+    }
+
+
     #container-navbar {
         flex-direction: column;
     }

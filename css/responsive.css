@@ -1,12 +1,13 @@
 /*PADRÃO*/
 @media (max-width: 316px) {}
-@media (max-width: 577px) {}
+@media (min-width: 473px) and (max-width: 576px) {}
 @media (min-width: 577px) and (max-width: 799.99px) {}
 @media (min-width: 800px) and (max-width: 1199.98px) {}
 @media (min-width: 1200px){}
 
 /*ESPECÍFICOS DAS TELAS DE CADASTRO - AJUSTAR O TAMANHO DOS INPUT'S PARA NÃO ESTOURAR*/
 @media (max-width: 343px) {}
+
 @media (min-width: 768px) and (max-width: 829.99px) {}
 @media (min-width: 830px) and (max-width: 879.99px) {}
 @media (min-width: 880px) and (max-width: 949.99px) {}

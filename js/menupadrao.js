@@ -1,7 +1,7 @@
 document.write(`
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="menu">
-        <div class="container-fluid">
+        <div class="container-fluid" id="menu-config">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
