@@ -58,7 +58,14 @@
         </div>
     </div>
 
+    <!--MENU-->
+    <div id="menuideal"></div>
     <script src="js/menupadrao.js"></script>
+    <script>
+        let perfilIdeal = document.getElementById('menuideal');
+        const perfil = window.localStorage.getItem('perfil');
+        perfilIdeal.innerHTML = menuIdeal[perfil];
+    </script>
 
 
     <div class="container-fluid " id="container-principal">

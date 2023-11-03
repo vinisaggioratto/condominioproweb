@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
     <!--CSS local-->
-    
+
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/telaprincipal.css">
@@ -42,7 +42,7 @@
     <div class="container-fluid fixed-top bg-secondary-color" id="container-navbar">
 
         <div class="col-12 col-md-1" id="img-logo">
-            
+
             <a href="telaprincipal.html" class="primary-color">
                 <img src="img/logo-simples-120.png" alt="Condomínio Pro - Gestão de Condomínios">
             </a>
@@ -59,8 +59,13 @@
     </div>
 
     <!--MENU-->
+    <div id="menuideal"></div>
     <script src="js/menupadrao.js"></script>
-
+    <script>
+        let perfilIdeal = document.getElementById('menuideal');
+        const perfil = window.localStorage.getItem('perfil');
+        perfilIdeal.innerHTML = menuIdeal[perfil];
+    </script>
 
     <!--RODAPÉ-->
     <footer class="footer fixed-bottom">

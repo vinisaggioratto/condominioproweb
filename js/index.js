@@ -3,4 +3,8 @@ const usuarioOnline = document.getElementById('usuarioOnline');
 const usuario = window.localStorage.getItem('usuario');
 if (usuario) {
     usuarioOnline.innerHTML = usuario;
+    console.log("Perfil enviado: " + perfil);
 }
+
+
+
