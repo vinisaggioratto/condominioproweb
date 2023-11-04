@@ -6,7 +6,7 @@ Sistema para gerenciamento de condomínios
 Sistema  | Status
 :--------|:---------------------------------------
 Desktop  | Concluído
-Web      | Em desenvolvimento
+Web      | Concluído
 Mobile   | Sem previsão de desenvolvimento
 
 --------
@@ -14,6 +14,9 @@ Mobile   | Sem previsão de desenvolvimento
 
 ```
 Java: Linguagem base para o desenvolvimento do sistema.
+  - Frameworks:
+      - Spring Boot
+        Dependências: JPA, Lombok, Validation, Spring Security, MySql Connector e devtools.
 ```
 ```
 MySQL: Utilizado para o gerenciamento do banco de dados.
@@ -44,4 +47,5 @@ O nosso sistema vai auxiliar os síndicos na gestão diária dos condomínios, t
 * Controle de fornecedores
 * Controle de manutenções
 * Controle de veículos
+* Controle das áreas do condomínio
 
