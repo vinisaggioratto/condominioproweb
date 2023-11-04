@@ -22,6 +22,9 @@ Java: Linguagem base para o desenvolvimento do sistema.
 MySQL: Utilizado para o gerenciamento do banco de dados.
 ```
 ```
+WEB: Html, CSS, JavaScript e Bootstrap.
+```
+```
 GitHub: Utilizado para o gerenciamento das versões do sistema.
 ```
 ```
